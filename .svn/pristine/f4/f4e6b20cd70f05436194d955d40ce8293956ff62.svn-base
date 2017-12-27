@@ -1,0 +1,41 @@
+<?php
+// +----------------------------------------------------------------------
+// 后台首页
+// +----------------------------------------------------------------------
+namespace Admin\Controller;
+use Common\Controller\AuthController;
+class IndexController extends AuthController {
+	//首页教学日历
+	public function index(){
+		//未登录
+		if (empty($_SESSION['aid'])){
+			$this->redirect('Admin/Login/login');
+		}
+		/*
+		 *2017冬：2017-09-19 周二     1505836800 至 2018-01-26  1516896000
+		 * 
+		 * 
+		 * 
+		 * 
+		 * 
+		 */
+		//教学周期总数
+		$start = 1505836800;$end = 1516896000;
+		$now_w = date("w",date('Y-m-d',1505836800));//当前星期,返回1,2,3 注：日期
+		$end_w = date('w',date('Y-m-d',1516896000));
+		$days = intval(($end - $start )/60/60/24);//总天数
+		//第一个个教学周天数
+		if($now_w == 0){
+			$first_w = 1;
+		}else{
+			$first_w = 7 - $now_w +1;
+		}
+		//总共教学周
+		$weeks = 1+ ceil(($days-$first_w)/7);
+		$weekarray=array("日","一","二","三","四","五","六"); //先定义一个数组
+// 	/	echo "星期".$weekarray[date("w")];
+		
+		//渲染模板
+		$this->display();
+	}
+}

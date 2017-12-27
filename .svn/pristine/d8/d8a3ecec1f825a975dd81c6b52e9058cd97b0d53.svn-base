@@ -1,0 +1,142 @@
+﻿/*
+统配样式
+time:2016-12-14
+actor:尚旭
+*/
+/*文件编码*/
+@charset "utf-8";
+/* CSS Document */
+/*统配样式*/
+html{font-size:14px;}
+body{
+    width:100%;
+    height:auto;
+    padding:0;
+    margin:0;
+    font-family:"微软雅黑";
+    color:#666666;
+}
+body, h1, h2, h3, h4, h5, h6, table, input, button, form, ul, ol, dl, dd, li, p {
+    margin: 0;
+    padding: 0;
+}
+*{
+    padding:0;
+    margin:0;}
+img{
+    border:0;
+    display:block;}
+ul li,dl li,ol li{list-style-type: none;}
+a{text-decoration:none;}
+a:hover{text-decoration: none;}
+input,btton{ border:0;}
+.fl{float:left;}
+.fr{float:right;}
+.clear{clear:both;}
+.clearfix{zoom:1}
+.clearfix:after{content: '';display: block;clear: both;}
+.dis-b{display: block;}
+.dis-i{display: inline;}
+.dis-n{display: none;}
+.po-rela{position: relative;}
+.po-abso{position: absolute;}
+.wid-1{ width:1px;}
+.wid-20{width:20%;}
+.wid-96{width:96%;}
+.wid-98{width:98%;}
+.wid-100{width:100%;}
+.bac-ccc{background-color:#cccccc;}
+.bac-fff{background-color:#ffffff;}
+.bac-fafafa{background-color:#fafafa;}
+/*字体样式*/
+.text-c{text-align:center;}
+.font-w-b{font-weight: bold;}
+/*字体大小*/
+.font12{font-size: 12px;}
+.font13{font-size: 13px;}
+.font14{font-size: 14px;}
+.font15{font-size: 15px;}
+.font16{font-size: 16px;}
+.font17{font-size: 17px;}
+.font18{font-size: 18px;}
+.font19{font-size: 19px;}
+.font20{font-size: 20px;}
+.font22{font-size:22px;}
+.font24{font-size:24px;}
+/*内边距样式*/
+.padd-0{
+    padding:0;
+}
+/*外边距样式*/
+.mar-0{
+    margin:0;
+}
+.mar-0-auto{
+    margin:0 auto;
+}
+/*外上边距样式*/
+.mt-0{margin-top:0;}
+.mt-4{margin-top:4px;}
+.mt-5{margin-top:5px;}
+.mt-10{margin-top:10px;}
+.mt-15{margin-top:15px;}
+.mt-20{margin-top:20px;}
+.mt-25{margin-top:25px;}
+.mt-28{margin-top:28px;}
+.mt-30{margin-top:30px;}
+.mt-35{margin-top:35px;}
+.mt-40{margin-top:40px;}
+.mt-45{margin-top:45px;}
+.mt-50{margin-top:50px;}
+.mt-60{margin-top:60px;}
+/*下边距样式*/
+.mb-0{margin-bottom:0;}
+.mb-5{margin-bottom:5px;}
+.mb-8{margin-bottom:8px;}
+.mb-10{margin-bottom:10px;}
+.mb-15{margin-bottom:15px;}
+.mb-18{margin-bottom:18px;}
+.mb-20{margin-bottom:20px;}
+.mb-25{margin-bottom:25px;}
+.mb-30{margin-bottom:30px;}
+.mb-40{margin-bottom:40px;}
+.mb-50{margin-bottom:50px;}
+/*左边距样式*/
+.ml-0{margin-left:0;}
+.ml-5{margin-left:5px;}
+.ml-8{margin-left:8px;}
+.ml-10{margin-left:10px;}
+.ml-15{margin-left:15px;}
+.ml-18{margin-left:18px;}
+.ml-20{margin-left:20px;}
+.ml-25{margin-left:25px;}
+.ml-30{margin-left:30px;}
+.ml-40{margin-left:40px;}
+.ml-50{margin-left:50px;}
+/*右边距样式*/
+.mr-0{margin-right:0;}
+.mr-5{margin-right:5px;}
+.mr-8{margin-right:8px;}
+.mr-10{margin-right:10px;}
+.mr-15{margin-right:15px;}
+.mr-18{margin-right:18px;}
+.mr-20{margin-right:20px;}
+.mr-25{margin-right:25px;}
+.mr-30{margin-right:30px;}
+.mr-40{margin-right:40px;}
+.mr-50{margin-right:50px;}
+/*字体颜色样式*/
+.c33{color:#333333;}
+.c99{color:#999999;}
+.c66{color:#666666;}
+.ccc{color:#cccccc;}
+.cff{color:#ffffff;}
+.cd75{color:#d75b99;}
+.c5c9{color:#5c99d8;}
+/*边框线样式*/
+.bor-e0{border:1px solid #e0e0e0;}
+.bor-e5{border:1px solid #e5e5e5;}
+.bor-t-e5{border-top:1px solid #e5e5e5;}
+.bor-b-e5{border-bottom:1px solid #e5e5e5;}
+.bor-l-e5{border-left:1px solid #e5e5e5;}
+.bor-r-e5{border-right:1px solid #e5e5e5;}

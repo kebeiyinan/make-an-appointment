@@ -1,0 +1,131 @@
+<?php
+// +----------------------------------------------------------------------
+// |预约管理模块
+// +----------------------------------------------------------------------
+// +----------------------------------------------------------------------
+// |高利杰 2017/12/12
+// +----------------------------------------------------------------------
+namespace Member\Controller;
+use Common\Controller\AuthController;
+use Org\Util\Stringnew;
+class MemberController extends AuthController {
+	/*
+     * 个人预约 教师以上权限
+     */
+	public function  subscribe(){
+		//当前登录的用户的id
+		$cur_admin_id = $_SESSION['aid'];
+		$search = I("search");
+    	if($search){
+            if($search['start_time']){
+                $start_time = strtotime($search['start_time']);
+                $where['a.addtime'] = array('egt',$start_time);
+            }
+            if($search['end_time']){
+                $end_time = strtotime($search['end_time']." 23:59:59");
+                $where['a.addtime'] = array("elt",$end_time);
+            }
+            if($search['start_time'] && $search['end_time']){
+                $start_time = strtotime($search['start_time']);
+                $end_time = strtotime($search['end_time']." 23:59:59");
+                $where['a.addtime'] = array(array('egt',$start_time),array('elt',$end_time),'AND');
+            }
+            if($search['aboratory_id']){
+            	$where['aboratory_id'] = $search['aboratory_id'];
+            }
+            if($search['status']){
+            	$where['a.status'] = $search['status'];
+            }
+        }
+        //排序-升序降序
+        $orde = I("orde");
+        if($orde){
+        	if($orde == 'DESC'){
+        		$order = 'addtime ASC';
+        		$orde = 'ASC';
+        	}elseif($orde == 'ASC'){
+        		$orde = 'DESC';
+        		$order = 'addtime DESC';
+        	}
+        }else{
+        	$orde = 'DESC';
+        	$order = 'addtime DESC';
+        }
+        //查询当前用户的身份级别
+        $group = M('auth_group_access')->where(array('uid'=>$cur_admin_id))->getField('group_id');
+        
+        //未删除
+        $where['a.is_del'] = 2;
+    	$count = M('subscribe')->join(" AS a LEFT JOIN __LAB_LIST__ as b ON a.aboratory_id = b.s_id ")->join(" __CLASSHOUR_LIST__ as c on a.class_hour = c.c_id")->where($where)->count();
+    	$Page= new \Think\Page($count,15);
+    	$show= $Page->show();
+		
+		$list = M('subscribe')->join(" AS a LEFT JOIN __LAB_LIST__ as b ON a.aboratory_id = b.s_id ")->join(" __CLASSHOUR_LIST__ as c on a.class_hour = c.c_id")->field('a.*,b.lab_name,c.classhour_name')->where($where)->order($order)->limit($Page->firstRow.','.$Page->listRows)->select();
+		//实验室列表
+		$lab_list = M("lab_list")->field("s_id,lab_name")->where(" is_del = 1 ")->select();
+
+
+		
+        $this->assign('orde',$orde);
+        $this->assign('cur_admin_id',$cur_admin_id);
+    	$this->assign('search',$search);
+    	$this->assign('page',$show);
+    	$this->assign('list',$list);
+    	$this->assign('lab_list',$lab_list);
+    	$this->display();
+	}
+	/*
+	 * 个人审核
+	 */
+	public function checked(){
+		$this->display();
+	}
+	/*
+	 * 预约 查询
+	 */
+	public function  subscribeSelect(){
+		$count = M('subscribe')->where(array('is_del'=>2))->count();
+    	$Page= new \Think\Page($count,10);
+    	$show= $Page->show();
+		$list = M('subscribe')->where(array('is_del'=>2))->limit($Page->firstRow.','.$Page->listRows)->order('status ASC')->select();
+		$this->assign('list',$list);
+		$this->assign('page',$show);
+		$this->display();
+	}
+	/*
+	 * 预约
+	 */
+	public function  subscribePre(){
+		//当前登录的用户的id\信息
+		$cur_admin_id = $_SESSION['aid'];
+		$cur_admin_realname = M("admin")->where(array("admin_id"=>$cur_admin_id))->getField("admin_realname");
+		$cur_admin_tel = M("admin")->where(array("admin_id"=>$cur_admin_id))->getField("admin_tel");
+		//实验室列表
+		$lab_list = M("lab_list")->field("s_id,lab_name")->where(" is_del = 1 ")->select();
+		$this->assign("lab_list",$lab_list);
+		//用户列表
+		$admin_list = M("admin")->field("admin_id,admin_realname")->where(array("admin_open"=>1,"is_del"=>1))->select();
+		$this->assign("admin_list",$admin_list);
+		//课时列表
+		$classhour_list = M("classhour_list")->field("c_id,classhour_name")->where(array("is_del"=>1))->order("sort ASC")->select();
+		$this->assign("classhour_list",$classhour_list);
+		//系部列表
+		$department_list = M("department_list")->field("department_id,department_name")->where(array("is_del"=>1))->order("sort ASC")->select();
+		$this->assign("department_list",$department_list);
+		$this->assign("cur_admin_id",$cur_admin_id);
+		$this->assign("cur_admin_realname",$cur_admin_realname);
+		$this->assign("cur_admin_tel",$cur_admin_tel);
+		$this->display();
+	}
+	//多选删除
+    public function alldel(){
+        $subscribe_id = I('subscribe_id');
+        $map['subscribe_id']  = array('in',$subscribe_id);
+        $re = M('subscribe')->where($map)->delete();
+        if($re > 0){
+            $this->success('删除成功',U('subscribe',array('p'=>I('p'))),1);
+        }else{
+            $this->error('删除失败',U('subscribe',array('p'=>I('p'))),1);
+        }
+    }
+}

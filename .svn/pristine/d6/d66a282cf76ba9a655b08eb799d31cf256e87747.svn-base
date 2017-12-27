@@ -1,0 +1,163 @@
+<extend name="Admin@Public/base"/>
+<block name="main-content">
+    <link href="/public/content/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <script src="/public/content/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
+    <script src="/public/content/js/bootstrap-datetimepicker.zh-CN.js" type="text/javascript"></script>
+    <style>
+    	.over-h{
+    		white-space: nowrap;
+    		text-overflow: ellipsis;
+    		overflow: hidden;
+    	}
+    </style>
+    <div class="page-content">
+		<div class="row">
+			<div class="col-xs-8 col-sm-8">
+				<div class="col-xs-12 col-sm-12">
+					<p style="text-align: center;font-size: 20px;font-weight: bold;">教学日历</p>
+					<form name="admin_list_sea" class="form-search" method="post" action="{:U('index')}">
+						<div class="row maintop">
+							<div class="col-xs-4 hidden-xs btn-sespan">
+								<div class="input-group col-sm-12 col-xs-12">
+									<select name="s_id" class="col-sm-12 col-xs-12">
+										<foreach name="lab_list" item="v">
+											<option value="{$v['s_id']}" >{$v['lab_name']}</option>
+										</foreach>
+									</select>
+								</div>
+							</div>
+							<div class="col-xs-4 hidden-xs btn-sespan">
+								<div class="input-group col-sm-12 col-xs-12">
+									<select name="recharge_type" class="col-sm-12 col-xs-12">
+										<for start="1" end="$weeks" comparison="elt">
+											<option value="{$i}" <if condition="$ww eq $i">selected </if>>学期第{$i}周</option>
+										</for>
+									</select>
+								</div>
+							</div>
+							<div class="col-xs-2 btn-sespan">
+								<div class="input-group">
+								 
+									
+									<span class="input-group-btn">
+										<button type="submit" class="btn btn-xs btm-input btn-purple">
+											<span class="ace-icon fa fa-search icon-on-right bigger-110"></span>
+											搜索
+										</button>
+									</span>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+	            <div class="col-xs-12">
+	                <table class="table table-striped table-bordered table-hover" id="dynamic-table">
+	                    <thead>
+	                        <tr>
+	                        	<th class="hidden-sm hidden-xs" style="width: 100px;">课时\周期</th>
+	                        	<foreach name="weekarray" item="v">
+	                        		<th class="hidden-sm hidden-xs" <if condition="$weekday eq $v">style="background-color:green;color: #fff;"</if> >{$v}</th>
+	                        	</foreach> 
+	                        </tr>
+	                    </thead>
+	                    <tbody>
+	                    	
+	                    	<foreach name="classhour_list" item="v">
+			                    <tr>
+			                    	<th class="hidden-sm hidden-xs" >{$v['classhour_name']}</th>
+			                    	 <!--style="background-color: #FF0000;color: #fff;"-->
+			                    	<if condition="$ww eq 1">
+			                    	 	<for start="1" end="$now_w" comparison="lt">
+			                    	 		<td class="hidden-sm hidden-xs"></td>
+			                    	 	</for>
+			                    	 	<for start="$now_w" end="7" comparison="elt">
+			                    	 			<if condition="$v['kk']['week'] eq $i">
+			                    	 				<td class="hidden-sm hidden-xs" style="background-color: #FF0000;color: #fff;">已占用</td>
+			                    	 			<else/>
+			                    	 				<td class="hidden-sm hidden-xs">未占用</td>
+			                    	 			</if>
+			                    	 			
+			                    	 	</for>
+			                    	</if>		                   		                        
+			                    </tr> 
+		                    </foreach>
+		                    
+	                    </tbody>
+	                </table>
+	            </div>
+			</div>
+            <div class="col-xs-4">
+            	<div class="col-xs-12">
+            		<p style="text-align: center;font-size: 20px;font-weight: bold;line-height: 70px;">公告展示</p>
+            		 <table class="table table-striped table-bordered table-hover" id="dynamic-table">
+            		 	<thead>
+                            <tr>
+                                <th class="hidden-sm hidden-xs">标题</th>
+                                <th class="hidden-sm hidden-xs">发布时间</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <foreach name="noticeList" item="vo">
+                            	<tr>
+                                    <td class="hidden-sm hidden-xs"><a href="{:U('Feedback/Notice/noticeInfo',array('id'=>$vo['n_id']))}">{$vo.content|htmlspecialchars_decode}</a></td>
+                                    <td class="hidden-sm hidden-xs">{$vo.addtime|date="Y-m-d",###}</td>
+                                </tr> 
+                            </foreach>
+                        </tbody>
+            		 </table>
+            	</div>
+            	<div class="col-xs-12">
+            		<p style="text-align: center;font-size: 20px;font-weight: bold;">教务提醒</p>
+            		 <table class="table table-striped table-bordered table-hover" id="dynamic-table">
+            		 	<thead>
+                            <tr>
+                                <th class="hidden-sm hidden-xs">实验室名称</th>
+                                <th class="hidden-sm hidden-xs">预约老师</th>
+                                <th class="hidden-sm hidden-xs">预约时间</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        	<tr>
+                                <td class="hidden-sm hidden-xs"><a href="javascript:;">实验室名称</a></td>
+                                <td class="hidden-sm hidden-xs">教授</td>
+                                <td class="hidden-sm hidden-xs">2017-11-02</td>
+                            </tr>                       
+                        </tbody>
+            		 </table>
+            	</div>
+            </div>
+        </div>
+    </div><!-- /.page-content -->                            
+</block>
+<block name="scripts">
+    <script type="text/javascript">
+     /*时间插件*/
+    $('#start_time').datetimepicker({
+        format: 'yyyy-mm-dd',
+        language: 'zh-CN', /*加载日历语言包，可自定义*/
+        weekStart: 1,
+        todayBtn: 1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        minView:'month',
+        forceParse: 0
+    }).on("click",function(ev){
+        $("#start_time").datetimepicker("setEndDate", $("#end_time").val());
+    });
+    /*时间插件*/
+    $('#end_time').datetimepicker({
+        format: 'yyyy-mm-dd',
+        language: 'zh-CN', /*加载日历语言包，可自定义*/
+        weekStart: 1,
+        todayBtn: 1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        minView:'month',
+        forceParse: 0
+    }).on("click", function (ev) {
+        $("#end_time").datetimepicker("setStartDate", $("#start_time").val());
+    });
+    </script>
+</block>

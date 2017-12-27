@@ -1,0 +1,126 @@
+<extend name="Admin@Public/base"/>
+<block name="main-content">
+	<div class="page-content">
+		<!--主题-->
+		<div class="page-header">
+			<h1>
+				您当前操作
+				<small>
+					<i class="ace-icon fa fa-angle-double-right"></i>
+					预约详情
+				</small>
+			</h1>
+		</div>
+		<div class="row">
+			<div class="col-xs-12">
+			<link type="text/css" rel="stylesheet" href="__PUBLIC__/goodsattr/liandong.css">
+			<link rel="stylesheet" type="text/css" media="all" href="__PUBLIC__/sldate/daterangepicker-bs3.css" />
+				<form class="form-horizontal subscribeform" id="formz" name="form0" method="post" enctype="multipart/form-data">
+					<div class="space-4"></div>
+					<div class="form-group" id="cpprice">
+						<label  class="col-sm-2 control-label no-padding-right" for="form-field-1">实验室： </label>
+						<div class="col-sm-10">
+							<input type="text" value="{$info.lab_name}"  class="col-xs-10 col-sm-3" disabled required/>
+						</div>
+					</div>
+					<div class="space-4"></div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label no-padding-right" for="form-field-1" required="required"> 指导老师：  </label>
+						<div class="col-sm-10">
+							<input type="text" value="{$info.subscribe_person}"  class="col-xs-10 col-sm-3" disabled required/>
+						</div>
+					</div>
+					<div class="space-4"></div>
+					<div class="form-group" id="cpprice">
+						<label  class="col-sm-2 control-label no-padding-right" for="form-field-1">周数： </label>
+						<div class="checkbox col-sm-4">
+							<input type="text" value="第{$info.number_of_weeks}周"  class="col-xs-10 col-sm-3" disabled required/>
+						</div>
+					</div>
+					<div class="space-4"></div>
+					<div class="form-group" id="cpprice">
+						<label  class="col-sm-2 control-label no-padding-right" for="form-field-1">星期：</label>
+							<div class="checkbox col-sm-4">
+							<input type="text" value="<if condition='$info.week eq 1'>星期一<elseif condition='$info.week eq 2'/>星期二<elseif condition='$info.week eq 3'/>星期三<elseif condition='$info.week eq 4'/>星期四<elseif condition='$info.week eq 5'/>星期五<elseif condition='$info.week eq 6'/>星期六<elseif condition='$info.week eq 0'/>星期日</if>"  class="col-xs-10 col-sm-3" disabled required/>
+							</div>
+					</div>
+					<div class="space-4"></div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 课时：  </label>
+						<div class="checkbox col-sm-4">
+							<foreach name="classhour_list" item="v">
+								<label style="width:100px;">
+									<span class="lbl" >{$v.classhour_name}</span>
+								</label>
+							</foreach>
+						</div>
+					</div>
+					<div class="space-4"></div>
+					<div class="form-group" id="cpprice">
+						<label  class="col-sm-2 control-label no-padding-right" for="form-field-1">系部名称： </label>
+						<div class="col-sm-10">
+							<input type="text" value="{$info.department_name}"  class="col-xs-10 col-sm-3" disabled required/>
+						</div>
+					</div>
+					<div class="space-4"></div>
+					<div class="form-group" id="cpprice">
+						<label  class="col-sm-2 control-label no-padding-right" for="form-field-1">预约专业： </label>
+						<div class="col-sm-10">
+							<input type="text" name="major" value="{$info.major}" class="col-xs-10 col-sm-3" disabled required/>
+						</div>
+					</div>
+					<div class="form-group" id="cpprice">
+						<label  class="col-sm-2 control-label no-padding-right" for="form-field-1">预约班级： </label>
+						<div class="col-sm-10">
+							<input type="text" name="major" value="{$info.class}" class="col-xs-10 col-sm-3" disabled required/>
+						</div>
+					</div>
+					<div class="space-4"></div>
+					<div class="form-group" id="cpprice">
+						<label  class="col-sm-2 control-label no-padding-right" for="form-field-1">预约人数： </label>
+						<div class="col-sm-10">
+							<input type="text" name="major" value="{$info.person_num}" class="col-xs-10 col-sm-3" disabled required/>
+						</div>
+					</div>
+					<div class="space-4"></div>
+					<div class="form-group" id="cpprice">
+						<label  class="col-sm-2 control-label no-padding-right" for="form-field-1">联系人： </label>
+						<div class="col-sm-10">
+							<input type="text" name="major" value="{$info.contacts}" class="col-xs-10 col-sm-3" disabled required/>
+						</div>
+					</div>
+					<div class="space-4"></div>
+					<div class="form-group" id="cpprice">
+						<label  class="col-sm-2 control-label no-padding-right" for="form-field-1">联系电话： </label>
+						<div class="col-sm-10">
+							<input type="text" name="major" value="{$info.contacts_phone}" class="col-xs-10 col-sm-3" disabled required/>
+						</div>
+					</div>
+					<div class="space-4"></div>
+					<div class="form-group" id="cpprice">
+						<label  class="col-sm-2 control-label no-padding-right" for="form-field-1">实验项目： </label>
+						<div class="col-sm-10">
+							<input type="text" name="major" value="{$info.project}" class="col-xs-10 col-sm-3" disabled required/>
+						</div>
+					</div>
+					<div class="space-4" id="zzzz"></div>
+
+					<div class="clearfix form-actions">
+						<div class="col-md-offset-3 col-md-9">
+							<a href="{:U('subscribe')}">
+							<button class="btn btn-info" type="button">
+								<i class="ace-icon fa fa-check bigger-110"></i>
+								返回
+							</button>
+							</a>
+							
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div><!-- /.page-content -->
+</block>
+<block name="scripts">
+	<script type="text/javascript" src="__PUBLIC__/goodsattr/js/liandong.js"></script>
+</block>

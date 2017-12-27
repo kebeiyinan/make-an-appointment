@@ -1,0 +1,13 @@
+<?php
+/**
+ * 配置文件
+ */
+return array(
+    'DB_TYPE' => 'mysql',
+    'DB_HOST' => '192.168.1.251',
+    'DB_NAME' => 'shiyanshi',
+    'DB_USER' => 'root',
+    'DB_PWD' => 'longshao',
+    'DB_PORT' => '3306',
+    'DB_PREFIX' => 'sm_',
+);

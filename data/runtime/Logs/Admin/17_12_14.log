@@ -1,0 +1,557 @@
+[ 2017-12-14T08:27:38+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0460s ]
+SQL: SELECT * FROM `sm_sysconfig`  [ RunTime:0.0010s ]
+
+[ 2017-12-14T08:27:38+08:00 ] 127.0.0.1 /index.php?m=Admin&c=Login&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `sm_sysconfig`  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.033002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2017-12-14T08:27:38+08:00 ] 127.0.0.1 /index.php?m=Admin&c=Login&a=verify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `sm_sysconfig`  [ RunTime:0.0020s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003000s ]
+
+[ 2017-12-14T08:27:49+08:00 ] 127.0.0.1 /index.php?m=Admin&c=Login&a=runlogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `sm_sysconfig`  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `sm_admin` [ RunTime:0.0270s ]
+SQL: SELECT * FROM `sm_admin` WHERE `admin_username` = 'admin' LIMIT 1   [ RunTime:0.0020s ]
+
+[ 2017-12-14T08:27:49+08:00 ] 127.0.0.1 /index.php?m=Admin&c=Login&a=verify&0.7735321488568874
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `sm_sysconfig`  [ RunTime:0.0020s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003000s ]
+
+[ 2017-12-14T08:27:57+08:00 ] 127.0.0.1 /index.php?m=Admin&c=Login&a=runlogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `sm_sysconfig`  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `sm_admin` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `sm_admin` WHERE `admin_username` = 'admin' LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `sm_admin` SET `admin_hits`=admin_hits+1 WHERE `admin_username` = 'admin' [ RunTime:0.0010s ]
+SQL: UPDATE `sm_admin` SET `admin_last_ip`='127.0.0.1',`admin_last_time`='1513157849',`admin_ip`='127.0.0.1',`admin_time`='1513211277' WHERE `admin_username` = 'admin' [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_auth_group_access` [ RunTime:0.0220s ]
+SQL: SELECT `group_id` FROM `sm_auth_group_access` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2017-12-14T09:33:10+08:00 ] 127.0.0.1 /index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0360s ]
+SQL: SELECT * FROM `sm_sysconfig`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0180s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `name` = 'Admin/Index/index' AND `status` = 1 ORDER BY `level` desc,`sort` LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `status` = 0 AND `name` = 'Admin/Index/index' ORDER BY `level` desc,`sort` LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `status` = 1 AND `pid` = 0 ORDER BY `sort`  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `sm_semester` [ RunTime:0.0190s ]
+SQL: SELECT * FROM `sm_semester` WHERE `is_del` = 2 ORDER BY `semester_addtime` desc LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `sm_lab_list` [ RunTime:0.0190s ]
+SQL: SELECT `s_id`,`lab_name` FROM `sm_lab_list` WHERE `status` = 1 AND `is_del` = 1  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_classhour_list` [ RunTime:0.0180s ]
+SQL: SELECT * FROM `sm_classhour_list` WHERE `is_del` = 1 ORDER BY `sort` ASC  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `sm_subscribe` [ RunTime:0.0190s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(1,class_hour) )  [ RunTime:0.0020s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(2,class_hour) )  [ RunTime:0.0020s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(3,class_hour) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(4,class_hour) )  [ RunTime:0.0020s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(5,class_hour) )  [ RunTime:0.0030s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(6,class_hour) )  [ RunTime:0.0020s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(7,class_hour) )  [ RunTime:0.0020s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(8,class_hour) )  [ RunTime:0.0020s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(9,class_hour) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(10,class_hour) )  [ RunTime:0.0020s ]
+NOTIC: [8] Undefined variable: list D:\phpStudy\WWW\shiyanshi\app\Admin\Controller\IndexController.class.php 第 87 行.
+SQL: SHOW COLUMNS FROM `sm_notice` [ RunTime:0.0230s ]
+SQL: SELECT * FROM `sm_notice` WHERE `is_del` = 2 ORDER BY `addtime` DESC LIMIT 3   [ RunTime:0.0020s ]
+SQL: SELECT a.subscribe_person,a.subscribe_time,b.lab_name FROM sm_subscribe a INNER JOIN sm_lab_list b ON b.s_id= a.aboratory_id  WHERE a.status = 1 AND a.is_del = 2 ORDER BY a.addtime DESC LIMIT 3   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_auth_group_access` [ RunTime:0.0190s ]
+SQL: SELECT `group_id` FROM `sm_auth_group_access` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: s_id D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 245 行.
+NOTIC: [8] Undefined variable: s_id D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 245 行.
+NOTIC: [8] Undefined index: kk D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 283 行.
+NOTIC: [8] Undefined index: kk D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 283 行.
+NOTIC: [8] Undefined index: kk D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 283 行.
+NOTIC: [8] Undefined index: kk D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 283 行.
+NOTIC: [8] Undefined index: kk D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 283 行.
+NOTIC: [8] Undefined index: kk D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 283 行.
+NOTIC: [8] Undefined index: kk D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 283 行.
+NOTIC: [8] Undefined index: kk D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 283 行.
+NOTIC: [8] Undefined index: kk D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 283 行.
+NOTIC: [8] Undefined index: kk D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 283 行.
+NOTIC: [8] Undefined index: kk D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 283 行.
+NOTIC: [8] Undefined index: kk D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 283 行.
+NOTIC: [8] Undefined index: kk D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 283 行.
+NOTIC: [8] Undefined index: kk D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 283 行.
+NOTIC: [8] Undefined index: kk D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 283 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.072004s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.072004s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2017-12-14T09:33:35+08:00 ] 127.0.0.1 /index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0310s ]
+SQL: SELECT * FROM `sm_sysconfig`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0190s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `name` = 'Admin/Index/index' AND `status` = 1 ORDER BY `level` desc,`sort` LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `status` = 0 AND `name` = 'Admin/Index/index' ORDER BY `level` desc,`sort` LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `status` = 1 AND `pid` = 0 ORDER BY `sort`  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `sm_semester` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `sm_semester` WHERE `is_del` = 2 ORDER BY `semester_addtime` desc LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_lab_list` [ RunTime:0.0150s ]
+SQL: SELECT `s_id`,`lab_name` FROM `sm_lab_list` WHERE `status` = 1 AND `is_del` = 1  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_classhour_list` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `sm_classhour_list` WHERE `is_del` = 1 ORDER BY `sort` ASC  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_subscribe` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(1,class_hour) )  [ RunTime:0.0020s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(2,class_hour) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(3,class_hour) )  [ RunTime:0.0020s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(4,class_hour) )  [ RunTime:0.0020s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(5,class_hour) )  [ RunTime:0.0020s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(6,class_hour) )  [ RunTime:0.0020s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(7,class_hour) )  [ RunTime:0.0020s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(8,class_hour) )  [ RunTime:0.0020s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(9,class_hour) )  [ RunTime:0.0020s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(10,class_hour) )  [ RunTime:0.0020s ]
+NOTIC: [8] Undefined variable: list D:\phpStudy\WWW\shiyanshi\app\Admin\Controller\IndexController.class.php 第 87 行.
+SQL: SHOW COLUMNS FROM `sm_notice` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `sm_notice` WHERE `is_del` = 2 ORDER BY `addtime` DESC LIMIT 3   [ RunTime:0.0020s ]
+SQL: SELECT a.subscribe_person,a.subscribe_time,b.lab_name FROM sm_subscribe a INNER JOIN sm_lab_list b ON b.s_id= a.aboratory_id  WHERE a.status = 1 AND a.is_del = 2 ORDER BY a.addtime DESC LIMIT 3   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_auth_group_access` [ RunTime:0.0080s ]
+SQL: SELECT `group_id` FROM `sm_auth_group_access` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: s_id D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 245 行.
+NOTIC: [8] Undefined variable: s_id D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 245 行.
+NOTIC: [8] Undefined index: kk D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 283 行.
+NOTIC: [8] Undefined index: kk D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 283 行.
+NOTIC: [8] Undefined index: kk D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 283 行.
+NOTIC: [8] Undefined index: kk D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 283 行.
+NOTIC: [8] Undefined index: kk D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 283 行.
+NOTIC: [8] Undefined index: kk D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 283 行.
+NOTIC: [8] Undefined index: kk D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 283 行.
+NOTIC: [8] Undefined index: kk D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 283 行.
+NOTIC: [8] Undefined index: kk D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 283 行.
+NOTIC: [8] Undefined index: kk D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 283 行.
+NOTIC: [8] Undefined index: kk D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 283 行.
+NOTIC: [8] Undefined index: kk D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 283 行.
+NOTIC: [8] Undefined index: kk D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 283 行.
+NOTIC: [8] Undefined index: kk D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 283 行.
+NOTIC: [8] Undefined index: kk D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 283 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.073004s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.073004s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2017-12-14T09:53:31+08:00 ] 127.0.0.1 /index.php?m=Admin&c=Index&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0310s ]
+SQL: SELECT * FROM `sm_sysconfig`  [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0210s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `name` = 'Admin/Index/index' AND `status` = 1 ORDER BY `level` desc,`sort` LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `status` = 0 AND `name` = 'Admin/Index/index' ORDER BY `level` desc,`sort` LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `status` = 1 AND `pid` = 0 ORDER BY `sort`  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `sm_semester` [ RunTime:0.0220s ]
+SQL: SELECT * FROM `sm_semester` WHERE `is_del` = 2 ORDER BY `semester_addtime` desc LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_lab_list` [ RunTime:0.0160s ]
+SQL: SELECT `s_id`,`lab_name` FROM `sm_lab_list` WHERE `status` = 1 AND `is_del` = 1  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_classhour_list` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `sm_classhour_list` WHERE `is_del` = 1 ORDER BY `sort` ASC  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_subscribe` [ RunTime:0.0160s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(1,class_hour) )  [ RunTime:0.0020s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(2,class_hour) )  [ RunTime:0.0030s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(3,class_hour) )  [ RunTime:0.0030s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(4,class_hour) )  [ RunTime:0.0030s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(5,class_hour) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(6,class_hour) )  [ RunTime:0.0020s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(7,class_hour) )  [ RunTime:0.0020s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(8,class_hour) )  [ RunTime:0.0040s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(9,class_hour) )  [ RunTime:0.0030s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(10,class_hour) )  [ RunTime:0.0030s ]
+NOTIC: [8] Undefined variable: list D:\phpStudy\WWW\shiyanshi\app\Admin\Controller\IndexController.class.php 第 87 行.
+SQL: SHOW COLUMNS FROM `sm_notice` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `sm_notice` WHERE `is_del` = 2 ORDER BY `addtime` DESC LIMIT 3   [ RunTime:0.0010s ]
+SQL: SELECT a.subscribe_person,a.subscribe_time,b.lab_name FROM sm_subscribe a INNER JOIN sm_lab_list b ON b.s_id= a.aboratory_id  WHERE a.status = 1 AND a.is_del = 2 ORDER BY a.addtime DESC LIMIT 3   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_auth_group_access` [ RunTime:0.0150s ]
+SQL: SELECT `group_id` FROM `sm_auth_group_access` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: s_id D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 245 行.
+NOTIC: [8] Undefined variable: s_id D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 245 行.
+NOTIC: [8] Undefined index: kk D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 283 行.
+NOTIC: [8] Undefined index: kk D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 283 行.
+NOTIC: [8] Undefined index: kk D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 283 行.
+NOTIC: [8] Undefined index: kk D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 283 行.
+NOTIC: [8] Undefined index: kk D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 283 行.
+NOTIC: [8] Undefined index: kk D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 283 行.
+NOTIC: [8] Undefined index: kk D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 283 行.
+NOTIC: [8] Undefined index: kk D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 283 行.
+NOTIC: [8] Undefined index: kk D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 283 行.
+NOTIC: [8] Undefined index: kk D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 283 行.
+NOTIC: [8] Undefined index: kk D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 283 行.
+NOTIC: [8] Undefined index: kk D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 283 行.
+NOTIC: [8] Undefined index: kk D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 283 行.
+NOTIC: [8] Undefined index: kk D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 283 行.
+NOTIC: [8] Undefined index: kk D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 283 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.081005s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.081005s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003000s ]
+
+[ 2017-12-14T10:33:53+08:00 ] 127.0.0.1 /index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0300s ]
+SQL: SELECT * FROM `sm_sysconfig`  [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0290s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `name` = 'Admin/Index/index' AND `status` = 1 ORDER BY `level` desc,`sort` LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `status` = 0 AND `name` = 'Admin/Index/index' ORDER BY `level` desc,`sort` LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `status` = 1 AND `pid` = 0 ORDER BY `sort`  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `sm_semester` [ RunTime:0.0290s ]
+SQL: SELECT * FROM `sm_semester` WHERE `is_del` = 2 ORDER BY `semester_addtime` desc LIMIT 1   [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `sm_lab_list` [ RunTime:0.0290s ]
+SQL: SELECT `s_id`,`lab_name` FROM `sm_lab_list` WHERE `status` = 1 AND `is_del` = 1  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_classhour_list` [ RunTime:0.0280s ]
+SQL: SELECT * FROM `sm_classhour_list` WHERE `is_del` = 1 ORDER BY `sort` ASC  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `sm_subscribe` [ RunTime:0.0260s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(1,class_hour) )  [ RunTime:0.0020s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(2,class_hour) )  [ RunTime:0.0020s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(3,class_hour) )  [ RunTime:0.0030s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(4,class_hour) )  [ RunTime:0.0020s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(5,class_hour) )  [ RunTime:0.0040s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(6,class_hour) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(7,class_hour) )  [ RunTime:0.0020s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(8,class_hour) )  [ RunTime:0.0020s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(9,class_hour) )  [ RunTime:0.0020s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(10,class_hour) )  [ RunTime:0.0020s ]
+NOTIC: [8] Undefined variable: list D:\phpStudy\WWW\shiyanshi\app\Admin\Controller\IndexController.class.php 第 87 行.
+SQL: SHOW COLUMNS FROM `sm_notice` [ RunTime:0.0170s ]
+SQL: SELECT * FROM `sm_notice` WHERE `is_del` = 2 ORDER BY `addtime` DESC LIMIT 3   [ RunTime:0.0010s ]
+SQL: SELECT a.subscribe_person,a.subscribe_time,b.lab_name FROM sm_subscribe a INNER JOIN sm_lab_list b ON b.s_id= a.aboratory_id  WHERE a.status = 1 AND a.is_del = 2 ORDER BY a.addtime DESC LIMIT 3   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_auth_group_access` [ RunTime:0.0160s ]
+SQL: SELECT `group_id` FROM `sm_auth_group_access` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0030s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: s_id D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 245 行.
+NOTIC: [8] Undefined variable: s_id D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 245 行.
+NOTIC: [8] Undefined index: kk D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 283 行.
+NOTIC: [8] Undefined index: kk D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 283 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.184011s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.186011s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.010001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.010001s ]
+
+[ 2017-12-14T10:34:19+08:00 ] 127.0.0.1 /index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0290s ]
+SQL: SELECT * FROM `sm_sysconfig`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0240s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `name` = 'Admin/Index/index' AND `status` = 1 ORDER BY `level` desc,`sort` LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `status` = 0 AND `name` = 'Admin/Index/index' ORDER BY `level` desc,`sort` LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `status` = 1 AND `pid` = 0 ORDER BY `sort`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_semester` [ RunTime:0.0210s ]
+SQL: SELECT * FROM `sm_semester` WHERE `is_del` = 2 ORDER BY `semester_addtime` desc LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_lab_list` [ RunTime:0.0140s ]
+SQL: SELECT `s_id`,`lab_name` FROM `sm_lab_list` WHERE `status` = 1 AND `is_del` = 1  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_classhour_list` [ RunTime:0.0120s ]
+SQL: SELECT * FROM `sm_classhour_list` WHERE `is_del` = 1 ORDER BY `sort` ASC  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_subscribe` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(1,class_hour) )  [ RunTime:0.0030s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(2,class_hour) )  [ RunTime:0.0020s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(3,class_hour) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(4,class_hour) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(5,class_hour) )  [ RunTime:0.0020s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(6,class_hour) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(7,class_hour) )  [ RunTime:0.0020s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(8,class_hour) )  [ RunTime:0.0020s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(9,class_hour) )  [ RunTime:0.0030s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(10,class_hour) )  [ RunTime:0.0020s ]
+NOTIC: [8] Undefined variable: list D:\phpStudy\WWW\shiyanshi\app\Admin\Controller\IndexController.class.php 第 87 行.
+SQL: SHOW COLUMNS FROM `sm_notice` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `sm_notice` WHERE `is_del` = 2 ORDER BY `addtime` DESC LIMIT 3   [ RunTime:0.0010s ]
+SQL: SELECT a.subscribe_person,a.subscribe_time,b.lab_name FROM sm_subscribe a INNER JOIN sm_lab_list b ON b.s_id= a.aboratory_id  WHERE a.status = 1 AND a.is_del = 2 ORDER BY a.addtime DESC LIMIT 3   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_auth_group_access` [ RunTime:0.0080s ]
+SQL: SELECT `group_id` FROM `sm_auth_group_access` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0020s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: s_id D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 245 行.
+NOTIC: [8] Undefined variable: s_id D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 245 行.
+NOTIC: [8] Undefined index: kk D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 283 行.
+NOTIC: [8] Undefined index: kk D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 283 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.039002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.039002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2017-12-14T10:35:12+08:00 ] 127.0.0.1 /index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.008001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009001s ]
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0300s ]
+SQL: SELECT * FROM `sm_sysconfig`  [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0280s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `name` = 'Admin/Index/index' AND `status` = 1 ORDER BY `level` desc,`sort` LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `status` = 0 AND `name` = 'Admin/Index/index' ORDER BY `level` desc,`sort` LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `status` = 1 AND `pid` = 0 ORDER BY `sort`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_semester` [ RunTime:0.0280s ]
+SQL: SELECT * FROM `sm_semester` WHERE `is_del` = 2 ORDER BY `semester_addtime` desc LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_lab_list` [ RunTime:0.0190s ]
+SQL: SELECT `s_id`,`lab_name` FROM `sm_lab_list` WHERE `status` = 1 AND `is_del` = 1  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_classhour_list` [ RunTime:0.0160s ]
+SQL: SELECT * FROM `sm_classhour_list` WHERE `is_del` = 1 ORDER BY `sort` ASC  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `sm_subscribe` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(1,class_hour) )  [ RunTime:0.0030s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(2,class_hour) )  [ RunTime:0.0020s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(3,class_hour) )  [ RunTime:0.0020s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(4,class_hour) )  [ RunTime:0.0020s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(5,class_hour) )  [ RunTime:0.0020s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(6,class_hour) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(7,class_hour) )  [ RunTime:0.0020s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(8,class_hour) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(9,class_hour) )  [ RunTime:0.0020s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(10,class_hour) )  [ RunTime:0.0020s ]
+NOTIC: [8] Undefined variable: list D:\phpStudy\WWW\shiyanshi\app\Admin\Controller\IndexController.class.php 第 87 行.
+SQL: SHOW COLUMNS FROM `sm_notice` [ RunTime:0.0120s ]
+SQL: SELECT * FROM `sm_notice` WHERE `is_del` = 2 ORDER BY `addtime` DESC LIMIT 3   [ RunTime:0.0010s ]
+SQL: SELECT a.subscribe_person,a.subscribe_time,b.lab_name FROM sm_subscribe a INNER JOIN sm_lab_list b ON b.s_id= a.aboratory_id  WHERE a.status = 1 AND a.is_del = 2 ORDER BY a.addtime DESC LIMIT 3   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_auth_group_access` [ RunTime:0.0110s ]
+SQL: SELECT `group_id` FROM `sm_auth_group_access` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: s_id D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 245 行.
+NOTIC: [8] Undefined variable: s_id D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 245 行.
+NOTIC: [8] Undefined index: kk D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 283 行.
+NOTIC: [8] Undefined index: kk D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 283 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.071004s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.071004s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003001s ]
+
+[ 2017-12-14T10:44:21+08:00 ] 127.0.0.1 /index.php?m=Admin&c=Index&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0300s ]
+SQL: SELECT * FROM `sm_sysconfig`  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0280s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `name` = 'Admin/Index/index' AND `status` = 1 ORDER BY `level` desc,`sort` LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `status` = 0 AND `name` = 'Admin/Index/index' ORDER BY `level` desc,`sort` LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `status` = 1 AND `pid` = 0 ORDER BY `sort`  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `sm_semester` [ RunTime:0.0290s ]
+SQL: SELECT * FROM `sm_semester` WHERE `is_del` = 2 ORDER BY `semester_addtime` desc LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_lab_list` [ RunTime:0.0160s ]
+SQL: SELECT `s_id`,`lab_name` FROM `sm_lab_list` WHERE `status` = 1 AND `is_del` = 1  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_classhour_list` [ RunTime:0.0160s ]
+SQL: SELECT * FROM `sm_classhour_list` WHERE `is_del` = 1 ORDER BY `sort` ASC  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `sm_subscribe` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(1,class_hour) )  [ RunTime:0.0020s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(2,class_hour) )  [ RunTime:0.0020s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(3,class_hour) )  [ RunTime:0.0020s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(4,class_hour) )  [ RunTime:0.0030s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(5,class_hour) )  [ RunTime:0.0020s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(6,class_hour) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(7,class_hour) )  [ RunTime:0.0020s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(8,class_hour) )  [ RunTime:0.0020s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(9,class_hour) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `sm_subscribe` WHERE `status` = 2 AND `is_del` = 2 AND `number_of_weeks` = 1 AND (  FIND_IN_SET(10,class_hour) )  [ RunTime:0.0020s ]
+NOTIC: [8] Undefined variable: list D:\phpStudy\WWW\shiyanshi\app\Admin\Controller\IndexController.class.php 第 87 行.
+SQL: SHOW COLUMNS FROM `sm_notice` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `sm_notice` WHERE `is_del` = 2 ORDER BY `addtime` DESC LIMIT 3   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_auth_group_access` [ RunTime:0.0150s ]
+SQL: SELECT `group_id` FROM `sm_auth_group_access` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT a.subscribe_person,a.subscribe_time,b.lab_name FROM sm_subscribe a INNER JOIN sm_lab_list b ON b.s_id= a.aboratory_id  WHERE a.status = 1 AND a.is_del = 2 ORDER BY a.addtime DESC LIMIT 3   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: s_id D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 245 行.
+NOTIC: [8] Undefined variable: s_id D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 245 行.
+NOTIC: [8] Undefined index: kk D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 283 行.
+NOTIC: [8] Undefined index: kk D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 283 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.062004s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.062004s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003000s ]
+
+[ 2017-12-14T11:52:03+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0290s ]
+SQL: SELECT * FROM `sm_sysconfig`  [ RunTime:0.0010s ]
+
+[ 2017-12-14T11:52:03+08:00 ] 127.0.0.1 /index.php?m=Admin&c=Login&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0340s ]
+SQL: SELECT * FROM `sm_sysconfig`  [ RunTime:0.0020s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004000s ]
+
+[ 2017-12-14T11:52:03+08:00 ] 127.0.0.1 /index.php?m=Admin&c=Login&a=verify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0330s ]
+SQL: SELECT * FROM `sm_sysconfig`  [ RunTime:0.0030s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004000s ]
+
+[ 2017-12-14T11:52:12+08:00 ] 127.0.0.1 /index.php?m=Admin&c=Login&a=runlogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0330s ]
+SQL: SELECT * FROM `sm_sysconfig`  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `sm_admin` [ RunTime:0.0180s ]
+SQL: SELECT * FROM `sm_admin` WHERE `admin_username` = 'admin' LIMIT 1   [ RunTime:0.0020s ]
+SQL: UPDATE `sm_admin` SET `admin_hits`=admin_hits+1 WHERE `admin_username` = 'admin' [ RunTime:0.0010s ]
+SQL: UPDATE `sm_admin` SET `admin_last_ip`='127.0.0.1',`admin_last_time`='1513215409',`admin_ip`='127.0.0.1',`admin_time`='1513223532' WHERE `admin_username` = 'admin' [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_auth_group_access` [ RunTime:0.0180s ]
+SQL: SELECT `group_id` FROM `sm_auth_group_access` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+

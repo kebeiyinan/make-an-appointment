@@ -1,0 +1,229 @@
+<extend name="Admin@Public/base"/>
+<block name="main-content">
+	<div class="page-content">
+		<!--主题-->
+		<div class="page-header">
+			<h1>
+				您当前操作
+				<small>
+					<i class="ace-icon fa fa-angle-double-right"></i>
+					添加预约
+				</small>
+			</h1>
+		</div>
+		<div class="row">
+			<div class="col-xs-12">
+			<link type="text/css" rel="stylesheet" href="__PUBLIC__/goodsattr/liandong.css">
+			<link rel="stylesheet" type="text/css" media="all" href="__PUBLIC__/sldate/daterangepicker-bs3.css" />
+				<form class="form-horizontal subscribeform" id="formz" name="form0" method="post" action="{:U('subscribeAdd')}"  enctype="multipart/form-data">
+					<div class="space-4"></div>
+					<div class="form-group" id="cpprice">
+						<label  class="col-sm-2 control-label no-padding-right" for="form-field-1">实验室： </label>
+						<div class="col-sm-10">
+							<select name="aboratory_id"  class="col-sm-3 selector" required="required">
+							<option value="">请选择实验室</option>
+								<foreach name="lab_list" item="v">
+									<option value="{$v.s_id}" >{$v.lab_name}</option>
+								</foreach>
+							</select>
+						</div>
+					</div>
+					<div class="space-4"></div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label no-padding-right" for="form-field-1" required="required"> 指导老师：  </label>
+						<div class="col-sm-10">
+							<select name="subscribe_person"  class="col-sm-3 selector">
+								<foreach name="admin_list" item="v">
+									<option value="{$v.admin_realname}" <eq name="cur_admin_id" value="$v.admin_id">selected</eq> >{$v.admin_realname}</option>
+								</foreach>
+							</select>
+						</div>
+					</div>
+					<div class="space-4"></div>
+					<div class="form-group" id="cpprice">
+						<label  class="col-sm-2 control-label no-padding-right" for="form-field-1">周数： </label>
+						<div class="checkbox col-sm-4">
+							<foreach name="all_ww_arr" item="v">
+								<label style="width:120px;margin-top:10px;">
+									<input class="ace ace-checkbox-2" name="number_of_weeks[]" <if condition="$v elt $cur_ww">disabled</if> type="checkbox" value="{$v}" />
+									<span class="lbl">第{$v}周</span>
+								</label>
+							</foreach>
+						</div>
+					</div>
+					<div class="space-4"></div>
+					<div class="form-group" id="cpprice">
+						<label  class="col-sm-2 control-label no-padding-right" for="form-field-1">星期：</label>
+						<div class="col-sm-10">
+							<select name="week"  class="col-sm-3 selector" required="required" id="week">
+							<option value="">请选择星期</option>
+							<option value="1">星期一</option>
+							<option value="2">星期二</option>
+							<option value="3">星期三</option>
+							<option value="4">星期四</option>
+							<option value="5">星期五</option>
+							<option value="6">星期六</option>
+							<option value="0">星期日</option>	
+							</select>
+						</div>
+					</div>
+					<div class="space-4"></div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 课时：  </label>
+						<div class="checkbox col-sm-4">
+							<foreach name="classhour_list" item="v">
+								<label style="width:120px;margin-top:10px;">
+									<input class="ace ace-checkbox-2" name="class_hour[]" type="checkbox" value="{$v.c_id}" />
+									<span class="lbl">{$v.classhour_name}</span>
+								</label>
+							</foreach>
+						</div>
+					</div>
+					<div class="space-4"></div>
+					<div class="form-group" id="cpprice">
+						<label  class="col-sm-2 control-label no-padding-right" for="form-field-1">系部名称： </label>
+						<div class="col-sm-10">
+							<select name="department_id"  class="col-sm-3 selector" required="required">
+								<option value="">请选择系部</option>
+								<foreach name="department_list" item="v">
+									<option value="{$v.department_id}" >{$v.department_name}</option>
+								</foreach>
+							</select>
+						</div>
+					</div>
+					<div class="space-4"></div>
+					<div class="form-group" id="cpprice">
+						<label  class="col-sm-2 control-label no-padding-right" for="form-field-1">预约专业： </label>
+						<div class="col-sm-10">
+							<input type="text" name="major"  placeholder="必填：预约专业"  class="col-xs-10 col-sm-3" required/>
+						</div>
+					</div>
+					<div class="form-group" id="cpprice">
+						<label  class="col-sm-2 control-label no-padding-right" for="form-field-1">预约班级： </label>
+						<div class="col-sm-10">
+							<input type="text" name="class"  placeholder="必填：预约班级"  class="col-xs-10 col-sm-3" required/>
+						</div>
+					</div>
+					<div class="space-4"></div>
+					<div class="form-group" id="cpprice">
+						<label  class="col-sm-2 control-label no-padding-right" for="form-field-1">预约人数： </label>
+						<div class="col-sm-10">
+							<input type="number" min="1" name="person_num"  placeholder="必填：预约人数"  class="col-xs-10 col-sm-3" required/>
+						</div>
+					</div>
+					<div class="space-4"></div>
+					<div class="form-group" id="cpprice">
+						<label  class="col-sm-2 control-label no-padding-right" for="form-field-1">联系人： </label>
+						<div class="col-sm-10">
+							<input type="text" name="contacts"  placeholder="必填：联系人"  value="{$cur_admin_realname}" class="col-xs-10 col-sm-3" required/>
+						</div>
+					</div>
+					<div class="space-4"></div>
+					<div class="form-group" id="cpprice">
+						<label  class="col-sm-2 control-label no-padding-right" for="form-field-1">联系电话： </label>
+						<div class="col-sm-10">
+							<input type="tel" name="contacts_phone"  placeholder="必填：联系电话" onkeyup="this.value=this.value.replace(/[^0-9]/g,'')" onafterpaste="this.value=this.value.replace(/[^0-9]/g,'')" value="{$cur_admin_tel}" class="col-xs-10 col-sm-3" required/>
+						</div>
+					</div>
+					<div class="space-4"></div>
+					<div class="form-group" id="cpprice">
+						<label  class="col-sm-2 control-label no-padding-right" for="form-field-1">实验项目： </label>
+						<div class="col-sm-10">
+							<input type="tel" name="project"  placeholder="必填：实验项目"   class="col-xs-10 col-sm-3" required/>
+						</div>
+					</div>
+					<div class="space-4" id="zzzz"></div>
+
+					<div class="clearfix form-actions">
+						<div class="col-md-offset-3 col-md-9">
+							<button class="btn btn-info" type="submit" id="zzz">
+								<i class="ace-icon fa fa-check bigger-110"></i>
+								保存
+							</button>
+							&nbsp; &nbsp; &nbsp;
+							<button class="btn" type="reset">
+								<i class="ace-icon fa fa-undo bigger-110"></i>
+								重置
+							</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div><!-- /.page-content -->
+</block>
+<block name="scripts">
+	
+	<script type="text/javascript">
+		$(function (){
+		    $("input[name='number_of_weeks\\[\\]']").click(function(){
+
+		            var val = $(this).val();
+		            alert(val);
+		            var count_w = {$weeks};//一共多少周
+		            if(start_w == 0){
+		            	start_w = 7;
+		            }
+		            var str ='<option value="">请选择星期</option>';
+		            
+		            //如果选择了第一周
+		            if(val == 1){
+		            	var start_w = {$start_w};//最开始是周几
+		            	for (var i=start_w;i<=7;i++){
+			            	var week = '';
+			            	if(i == 1){
+			            		week = '一';
+			            	}else if(i == 2){
+			            		week = '二';
+			            	}else if(i == 3){
+			            		week = '三';
+			            	}else if(i == 4){
+			            		week = '四';
+			            	}else if(i == 5){
+			            		week = '五';
+			            	}else if(i == 6){
+			            		week = '六';
+			            	}else if(i == 7){
+			            		week = '日';	
+			            	}
+							str += "<option value="+i+">星期"+week+"</option>";
+						}
+						str = str=str.replace('7','0');
+		            	$('#week').empty();
+		            	$('#week').append(str);
+		            }
+		            //如果选择了最后一周
+		            if(val == count_w){
+		            	var end_w = {$end_w};//周后一周是周几
+		            	if(end_w == 0){
+		            		end_w = 7;
+		            	}
+		            	for (var i=1;i<=end_w;i++){
+		            		var week = '';
+			            	if(i == 1){
+			            		week = '一';
+			            	}else if(i == 2){
+			            		week = '二';
+			            	}else if(i == 3){
+			            		week = '三';
+			            	}else if(i == 4){
+			            		week = '四';
+			            	}else if(i == 5){
+			            		week = '五';
+			            	}else if(i == 6){
+			            		week = '六';
+			            	}else if(i == 7){
+			            		week = '日';	
+			            	}
+			            	str += "<option value="+i+">星期"+week+"</option>";
+		            	}
+		            	str = str=str.replace('7','0');
+		            	$('#week').empty();
+		            	$('#week').append(str);
+		            }
+		        })
+		});
+
+
+	</script>>
+</block>

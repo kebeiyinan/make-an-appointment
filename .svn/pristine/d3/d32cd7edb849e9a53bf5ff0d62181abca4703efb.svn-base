@@ -1,0 +1,33 @@
+<?php
+// +----------------------------------------------------------------------
+// |预约管理模块
+// +----------------------------------------------------------------------
+namespace Member\Controller;
+use Common\Controller\AuthController;
+use Org\Util\Stringnew;
+class MemberController extends AuthController {
+	/*
+     * 个人预约 教师以上权限
+     */
+	public function  subscribe(){
+		$this->display();
+	}
+	/*
+	 * 个人审核
+	 */
+	public function checked(){
+		$this->display();
+	}
+	/*
+	 * 预约 查询
+	 */
+	public function  subscribeSelect(){
+		$this->display();
+	}
+	/*
+	 * 预约
+	 */
+	public function  subscribePre(){
+		$this->display();
+	}
+}

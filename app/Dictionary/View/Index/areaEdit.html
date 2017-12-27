@@ -1,0 +1,94 @@
+<extend name="Admin@Public/base" />
+<block name="main-content">
+	<div class="page-content">
+		<!--主题-->
+		<div class="page-header">
+			<h1>
+				您当前操作
+				<small>
+					<i class="ace-icon fa fa-angle-double-right"></i>
+					修改区域
+				</small>
+			</h1>
+		</div>
+		<div class="row">
+			<div class="col-xs-12">
+				<form class="form-horizontal regionform" name="admin_list_add" method="post" action="{:U('runareaEdit')}">
+				<input type="hidden" name="p" value="{$p}">
+					<div class="form-group">
+						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 地址： </label>
+						<div class="col-sm-2">
+							<!-- <select name="province" disabled="true" class="province" class="col-sm-5" required>
+								<option value="">选择省</option>
+									<option value="{$data.city_id}">{$data.name}</option>
+							</select> -->
+							<input type="text"  disabled="true" value="{$data.name}" name="">
+						</div>
+					</div>
+					<div class="space-4"></div>
+
+					<div class="form-group">
+						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 排序： </label>
+						<div class="col-sm-10" style="padding-top:5px;">
+						<input name="vieworder" id="sort" type="number" min="0" class="wh50" value="{$data.vieworder}">
+						<input name="oarea_id" type="hidden" value="{$data.oarea_id}">
+						<span class="lbl">&nbsp 注释：数字越小越靠前</span>
+						</div>
+					</div>
+					<div class="space-4"></div>
+					
+					<div class="form-group">
+						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 状态： </label>
+						<div class="col-sm-10" style="padding-top:5px;">
+							<input name="open" id="admin_open" value="1" class="ace ace-switch" <if condition="$data.closed eq 1"> checked </if> type="checkbox" />
+							<span class="lbl">&nbsp &nbsp 默认开通</span>
+						</div>
+					</div>
+					<div class="space-4"></div>
+
+					<div class="clearfix form-actions">
+						<div class="col-md-offset-3 col-md-9">
+							<button class="btn btn-info" type="submit">
+								<i class="ace-icon fa fa-check bigger-110"></i>
+								保存
+							</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div><!-- /.page-content -->
+	<script>
+	//获取市级单位
+		$('.province').change(function(){
+			var	pid = $(this).val();
+			$.ajax({
+				type:'post',
+				url:"{:U('Ajax/Ajax/getCity')}",
+				data:{pid:pid},
+				success:function(rs){
+					$('#city_one').css('display','block');
+					$("#city").html("<option value=''>选择市</option>"+rs);
+				}
+			}) 
+
+		})
+		//获取区县级单位
+		$('#city').change(function(){
+			var	pid = $(this).val();
+			$.ajax({
+				type:'post',
+				url:"{:U('Ajax/Ajax/getCity')}",
+				data:{pid:pid},
+				success:function(rs){
+					$('#city_two').css('display','block');
+					$("#county").html("<option value=''>选择区县</option>"+rs);
+				}
+			}) 
+
+		})
+	</script>
+</block>
+<block name="scripts">
+</block>
+	

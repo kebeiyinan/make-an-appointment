@@ -1,0 +1,84 @@
+<?php
+// +----------------------------------------------------------------------
+// | 公告管理模块
+// +----------------------------------------------------------------------
+// | 石保帅 2017.11.22
+// +----------------------------------------------------------------------
+namespace Feedback\Controller;
+use Common\Controller\AuthController;
+class NoticeController extends AuthController{
+	//公告列表页
+	public function index(){
+        $notice_db = M('notice');
+		$search = I("search");
+    	if($search){
+            if($search['start_time']){
+                $start_time = strtotime($search['start_time']);
+                $where['addtime'] = array('egt',$start_time);
+            }
+            if($search['end_time']){
+                $end_time = strtotime($search['end_time']." 23:59:59");
+                $where['addtime'] = array("elt",$end_time);
+            }
+            if($search['start_time'] && $search['end_time']){
+                $start_time = strtotime($search['start_time']);
+                $end_time = strtotime($search['end_time']." 23:59:59");
+                $where['addtime'] = array(array('egt',$start_time),array('elt',$end_time),'AND');
+            }
+            if(trim($search['title'])){
+            	$where['title']=array('like','%'.trim($search['title']).'%');
+            }
+        }
+    	$count = $notice_db->where($where)->count('n_id');
+    	$Page= new \Think\Page($count,15);
+    	$show= $Page->show();
+    	$list = $notice_db->where($where)->order('n_id desc')->limit($Page->firstRow.','.$Page->listRows)->select();
+    	$this->assign('search',$search);
+    	$this->assign('page',$show);
+    	$this->assign("list",$list);
+    	$this->display();	
+	}
+    //添加公告
+    public function noticeAdd()
+    {
+        if(IS_AJAX)
+        {
+            $title = trim(I('title'));
+            $content = I('content');
+            if(!$title || !$content)
+            {
+                $this->error('缺少上传参数',0);
+            }
+            else
+            {
+                $indata = array(
+                    'title'=>$title,
+                    'content'=>$content,
+                    'addtime'=>time(),
+                    'admin_id'=>session('aid'),
+                );
+                $re = M('notice')->add($indata);
+                if($re)
+                {
+                    $this->success('发布成功',U('index'),1);
+                }
+            }
+        }
+        else
+        {
+           $this->display();
+        }  
+    }
+	//公告详情
+    public function noticeInfo()
+    {
+        $this->display();
+    }
+    //删除公告
+    public function noticeDel()
+    {
+        $id = I('id');
+        $re = M('notice')->delete($id);
+        $this->success('删除成功',U('index',array('p'=>I('p'))),1);
+    }
+}

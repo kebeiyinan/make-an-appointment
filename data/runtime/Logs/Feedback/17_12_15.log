@@ -1,0 +1,82 @@
+[ 2017-12-15T11:18:48+08:00 ] 127.0.0.1 /index.php?m=Feedback&c=Notice&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0120s ]
+SQL: SELECT * FROM `sm_sysconfig`  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `sm_auth_group_access` [ RunTime:0.0100s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM sm_auth_group_access a INNER JOIN sm_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' )  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0080s ]
+SQL: SELECT `condition`,`name` FROM `sm_auth_rule` WHERE `id` IN ('1','6','59','151','178','179','180','208','210','231','232','233','234','235','237','238','239','240','211','241','242','243','244','246','247','248','249','209','225','224','226','227','228','229','230','694','701','702','697','705','698','706','699','707','691','708','692','693','670','671','709','672','673') AND `type` = 1  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `name` = 'Feedback/Notice/index' AND `status` = 1 ORDER BY `level` desc,`sort` LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `id` = 670 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `status` = 1 AND `pid` = 670 ORDER BY `sort`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_notice` [ RunTime:0.0470s ]
+SQL: SELECT COUNT(n_id) AS tp_count FROM `sm_notice` AS a LEFT JOIN sm_admin as b ON a.admin_id = b.admin_id  WHERE a.is_del = 2 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT a.*,b.admin_realname FROM `sm_notice` AS a LEFT JOIN sm_admin as b ON a.admin_id = b.admin_id  WHERE a.is_del = 2 ORDER BY `addtime` desc LIMIT 0,15   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_auth_group_access` [ RunTime:0.0140s ]
+SQL: SELECT `group_id` FROM `sm_auth_group_access` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] Illegal string offset 'start_time' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Feedback\bc49e04a20341a398a56abcb7c9de460.php 第 256 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Feedback\bc49e04a20341a398a56abcb7c9de460.php 第 256 行.
+NOTIC: [2] Illegal string offset 'end_time' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Feedback\bc49e04a20341a398a56abcb7c9de460.php 第 258 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Feedback\bc49e04a20341a398a56abcb7c9de460.php 第 258 行.
+NOTIC: [2] Illegal string offset 'title' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Feedback\bc49e04a20341a398a56abcb7c9de460.php 第 266 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Feedback\bc49e04a20341a398a56abcb7c9de460.php 第 266 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.062004s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.062004s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005000s ]
+
+[ 2017-12-15T11:21:00+08:00 ] 127.0.0.1 /index.php?m=Feedback&c=Notice&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003001s ]
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0280s ]
+SQL: SELECT * FROM `sm_sysconfig`  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `sm_auth_group_access` [ RunTime:0.0170s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM sm_auth_group_access a INNER JOIN sm_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0150s ]
+SQL: SELECT `condition`,`name` FROM `sm_auth_rule` WHERE `id` IN ('1','6','59','151','178','179','180','208','210','231','232','233','234','235','237','238','239','240','211','241','242','243','244','246','247','248','249','209','225','224','226','227','228','229','230','694','701','702','697','705','698','706','699','707','691','708','692','693','670','671','709','672','673') AND `type` = 1  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `name` = 'Feedback/Notice/index' AND `status` = 1 ORDER BY `level` desc,`sort` LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `id` = 670 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `status` = 1 AND `pid` = 670 ORDER BY `sort`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_notice` [ RunTime:0.0100s ]
+SQL: SELECT COUNT(n_id) AS tp_count FROM `sm_notice` AS a LEFT JOIN sm_admin as b ON a.admin_id = b.admin_id  WHERE a.is_del = 2 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT a.*,b.admin_realname FROM `sm_notice` AS a LEFT JOIN sm_admin as b ON a.admin_id = b.admin_id  WHERE a.is_del = 2 ORDER BY `addtime` desc LIMIT 0,15   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `sm_auth_group_access` [ RunTime:0.0090s ]
+SQL: SELECT `group_id` FROM `sm_auth_group_access` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2] Illegal string offset 'start_time' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Feedback\bc49e04a20341a398a56abcb7c9de460.php 第 256 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Feedback\bc49e04a20341a398a56abcb7c9de460.php 第 256 行.
+NOTIC: [2] Illegal string offset 'end_time' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Feedback\bc49e04a20341a398a56abcb7c9de460.php 第 258 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Feedback\bc49e04a20341a398a56abcb7c9de460.php 第 258 行.
+NOTIC: [2] Illegal string offset 'title' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Feedback\bc49e04a20341a398a56abcb7c9de460.php 第 266 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Feedback\bc49e04a20341a398a56abcb7c9de460.php 第 266 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.058003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.059003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005001s ]
+

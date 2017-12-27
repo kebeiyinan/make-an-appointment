@@ -1,0 +1,157 @@
+<extend name="Admin@Public/base"/>
+<block name="main-content">
+	<div class="page-content">
+		<!--主题-->
+		<div class="page-header">
+			<h1>
+				您当前操作
+				<small>
+					<i class="ace-icon fa fa-angle-double-right"></i>
+					添加预约
+				</small>
+			</h1>
+		</div>
+		<div class="row">
+			<div class="col-xs-12">
+			<link type="text/css" rel="stylesheet" href="__PUBLIC__/goodsattr/liandong.css">
+			<link rel="stylesheet" type="text/css" media="all" href="__PUBLIC__/sldate/daterangepicker-bs3.css" />
+				<form class="form-horizontal ajaxForm2" id="formz" name="form0" method="post" action="{:U('goods_edit_act')}"  enctype="multipart/form-data">
+					<input type="hidden" name="goodid" id="goodid" value="{$goodid}" />
+					<input type="hidden" name="type" value="{$type}" />
+					<div class="space-4"></div>
+					<div class="form-group" id="cpprice">
+						<label  class="col-sm-2 control-label no-padding-right" for="form-field-1">实验室： </label>
+						<div class="col-sm-10">
+							<select name="aboratory_id"  class="col-sm-3 selector" required="required">
+							<option value="">请选择实验室</option>
+								<foreach name="lab_list" item="v">
+									<option value="{$v.s_id}" >{$v.lab_name}</option>
+								</foreach>
+							</select>
+						</div>
+					</div>
+					<div class="space-4"></div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label no-padding-right" for="form-field-1" required="required"> 指导老师：  </label>
+						<div class="col-sm-10">
+							<select name="subscribe_person"  class="col-sm-3 selector">
+								<foreach name="admin_list" item="v">
+									<option value="{$v.admin_id}" <eq name="cur_admin_id" value="$v.admin_id">selected</eq> >{$v.admin_realname}</option>
+								</foreach>
+							</select>
+						</div>
+					</div>
+					<div class="space-4"></div>
+					<div class="form-group" id="cpprice">
+						<label  class="col-sm-2 control-label no-padding-right" for="form-field-1">周数： </label>
+						<div class="checkbox">
+								<label>
+									<input class="ace ace-checkbox-2" name="is_hot" <if condition="$goods_list.is_hot eq 1">checked</if> type="checkbox" value="1" />
+									<span class="lbl">第一周</span>
+								</label>
+								<label>
+									<input class="ace ace-checkbox-2" name="is_new" <if condition="$goods_list.is_new eq 1">checked</if> type="checkbox" value="1" />
+									<span class="lbl">第二周</span>
+								</label>
+								<label>
+									<input class="ace ace-checkbox-2" name="is_recom" <if condition="$goods_list.is_recom eq 1">checked</if> type="checkbox" value="1" />
+									<span class="lbl">第三周</span>
+								</label>
+						</div>
+					</div>
+					<div class="space-4"></div>
+					<div class="form-group" id="cpprice">
+						<label  class="col-sm-2 control-label no-padding-right" for="form-field-1">星期： </label>
+						<div class="col-sm-10">
+							<select name="week"  class="col-sm-3 selector" required="required">
+							<option value="">请选择星期</option>
+							<option value="1">星期一</option>
+							<option value="2">星期二</option>
+							<option value="3">星期三</option>
+							<option value="4">星期四</option>
+							<option value="5">星期五</option>
+							<option value="6">星期六</option>
+							<option value="7">星期日</option>	
+							</select>
+						</div>
+					</div>
+					<div class="space-4"></div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 课时：  </label>
+						<div class="checkbox">
+							<foreach name="classhour_list" item="v">
+								<label>
+									<input class="ace ace-checkbox-2" name="number_of_weeks" type="checkbox" value="{$v.c_id}" />
+									<span class="lbl">{$v.classhour_name}</span>
+								</label>
+							</foreach>
+						</div>
+					</div>
+					<div class="space-4"></div>
+					<div class="form-group" id="cpprice">
+						<label  class="col-sm-2 control-label no-padding-right" for="form-field-1">专业名称： </label>
+						<div class="col-sm-10">
+							<select name="brand_id"  class="col-sm-3 selector" required="required">
+								<option value="">请选择专业</option>
+								<foreach name="department_list" item="v">
+									<option value="{$v.department_id}" >{$v.department_name}</option>
+								</foreach>
+							</select>
+						</div>
+					</div>
+					<div class="space-4"></div>
+					<div class="form-group" id="cpprice">
+						<label  class="col-sm-2 control-label no-padding-right" for="form-field-1">预约人数： </label>
+						<div class="col-sm-10">
+							<input type="number" min="1" name="shop_price"  placeholder="必填：预约人数"  value="{$goods_list.shop_price}" class="col-xs-10 col-sm-3" required/>
+						</div>
+					</div>
+					<div class="space-4"></div>
+					<div class="form-group" id="cpprice">
+						<label  class="col-sm-2 control-label no-padding-right" for="form-field-1">联系人： </label>
+						<div class="col-sm-10">
+							<input type="text" name="shop_price"  placeholder="必填：联系人"  value="{$cur_admin_realname}" class="col-xs-10 col-sm-3" required/>
+						</div>
+					</div>
+					<div class="space-4"></div>
+					<div class="form-group" id="cpprice">
+						<label  class="col-sm-2 control-label no-padding-right" for="form-field-1">联系电话： </label>
+						<div class="col-sm-10">
+							<input type="tel" name="shop_price"  placeholder="必填：联系电话"  value="{$cur_admin_tel}" class="col-xs-10 col-sm-3" required/>
+						</div>
+					</div>
+					<div class="space-4"></div>
+					<div class="form-group" id="cpprice">
+						<label  class="col-sm-2 control-label no-padding-right" for="form-field-1">实验项目： </label>
+						<div class="col-sm-10">
+							<input type="tel" name="shop_price"  placeholder="必填：实验项目"  value="" class="col-xs-10 col-sm-3" required/>
+						</div>
+					</div>
+					<div class="space-4" id="zzzz"></div>
+
+					<div class="clearfix form-actions">
+						<div class="col-md-offset-3 col-md-9">
+							<button class="btn btn-info" type="submit" id="zzz">
+							<input type="hidden" value="{$goods_cat_id1}" name="goods_cat_id1" />
+							<input type="hidden" value="{$goods_cat_id2}" name="goods_cat_id2" />
+							<input type="hidden" value="{$goods_cat_id3}" name="goods_cat_id3" />
+								<i class="ace-icon fa fa-check bigger-110"></i>
+								保存
+							</button>
+
+							&nbsp; &nbsp; &nbsp;
+							<button class="btn" type="reset">
+								<i class="ace-icon fa fa-undo bigger-110"></i>
+								重置
+							</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div><!-- /.page-content -->
+</block>
+<block name="scripts">
+	<script type="text/javascript" src="__PUBLIC__/goodsattr/js/liandong.js"></script>
+
+</block>

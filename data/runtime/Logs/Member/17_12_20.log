@@ -1,0 +1,559 @@
+[ 2017-12-20T23:14:32+08:00 ] 127.0.0.1 /index.php?m=Member&c=Member&a=subscribeSelect
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `sm_sysconfig`  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `sm_auth_group_access` [ RunTime:0.0090s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM sm_auth_group_access a INNER JOIN sm_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0100s ]
+SQL: SELECT `condition`,`name` FROM `sm_auth_rule` WHERE `id` IN ('1','6','59','151','178','179','180','208','210','231','232','233','234','235','237','238','239','240','211','241','242','243','244','246','247','248','249','209','225','224','226','227','228','229','230','694','701','702','697','705','698','706','699','707','691','708','692','693','670','671','709','672','673') AND `type` = 1  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `name` = 'Member/Member/subscribeSelect' AND `status` = 1 ORDER BY `level` desc,`sort` LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `status` = 1 AND `pid` = 0 ORDER BY `sort`  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `sm_auth_group_access` [ RunTime:0.0090s ]
+SQL: SELECT `group_id` FROM `sm_auth_group_access` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `sm_subscribe` [ RunTime:0.0610s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sm_subscribe` AS a LEFT JOIN sm_lab_list AS b ON a.aboratory_id=b.s_id  WHERE ( a.subscribe_time > 1513699200 AND a.subscribe_time <= 1514908799  ) AND a.status = 2 AND a.is_del = 2 LIMIT 1   [ RunTime:0.0170s ]
+SQL: SELECT a.*,b.lab_name FROM `sm_subscribe` AS a LEFT JOIN sm_lab_list AS b ON a.aboratory_id=b.s_id  WHERE ( a.subscribe_time > 1513699200 AND a.subscribe_time <= 1514908799  ) AND a.status = 2 AND a.is_del = 2 ORDER BY a.subscribe_time DESC LIMIT 0,10   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_classhour_list` [ RunTime:0.0110s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 5 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `sm_lab_list` [ RunTime:0.0210s ]
+SQL: SELECT `s_id`,`lab_name` FROM `sm_lab_list` WHERE `is_del` = 1 AND `status` = 1  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant aboratory_id - assumed 'aboratory_id' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\0a4dbc99dc019085590e81d36cb5fe6b.php 第 238 行.
+NOTIC: [2] Illegal string offset 'aboratory_id' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\0a4dbc99dc019085590e81d36cb5fe6b.php 第 238 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\0a4dbc99dc019085590e81d36cb5fe6b.php 第 238 行.
+NOTIC: [8] Use of undefined constant aboratory_id - assumed 'aboratory_id' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\0a4dbc99dc019085590e81d36cb5fe6b.php 第 238 行.
+NOTIC: [2] Illegal string offset 'aboratory_id' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\0a4dbc99dc019085590e81d36cb5fe6b.php 第 238 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\0a4dbc99dc019085590e81d36cb5fe6b.php 第 238 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-20T23:14:38+08:00 ] 127.0.0.1 /index.php?m=Member&c=Member&a=subscribe
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `sm_sysconfig`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_auth_group_access` [ RunTime:0.0100s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM sm_auth_group_access a INNER JOIN sm_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0090s ]
+SQL: SELECT `condition`,`name` FROM `sm_auth_rule` WHERE `id` IN ('1','6','59','151','178','179','180','208','210','231','232','233','234','235','237','238','239','240','211','241','242','243','244','246','247','248','249','209','225','224','226','227','228','229','230','694','701','702','697','705','698','706','699','707','691','708','692','693','670','671','709','672','673') AND `type` = 1  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `name` = 'Member/Member/subscribe' AND `status` = 1 ORDER BY `level` desc,`sort` LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `status` = 1 AND `pid` = 0 ORDER BY `sort`  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `sm_auth_group_access` [ RunTime:0.0100s ]
+SQL: SELECT `group_id` FROM `sm_auth_group_access` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_subscribe` [ RunTime:0.0120s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sm_subscribe`  AS a LEFT JOIN sm_lab_list as b ON a.aboratory_id = b.s_id  INNER JOIN  sm_classhour_list as c on a.class_hour = c.c_id  WHERE a.admin_id = '1' AND a.is_del = 2 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT a.*,b.lab_name,c.classhour_name FROM `sm_subscribe`  AS a LEFT JOIN sm_lab_list as b ON a.aboratory_id = b.s_id  INNER JOIN  sm_classhour_list as c on a.class_hour = c.c_id  WHERE a.admin_id = '1' AND a.is_del = 2 ORDER BY `addtime` DESC,`status` LIMIT 0,15   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_lab_list` [ RunTime:0.0120s ]
+SQL: SELECT `s_id`,`lab_name` FROM `sm_lab_list` WHERE `is_del` = 1 AND `status` = 1  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `sm_semester` [ RunTime:0.0520s ]
+SQL: SELECT * FROM `sm_semester` WHERE `is_del` = 2 ORDER BY `semester_addtime` desc LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_classhour_list` [ RunTime:0.0120s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 9 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 3 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 6 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 7 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 7 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 7 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 8 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 8 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 8 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 5 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 5 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 10 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 9 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 10 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 9 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 3 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 3 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] Illegal string offset 'start_time' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\a6ab2c8d7937308ad25c9c4553470e0f.php 第 244 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\a6ab2c8d7937308ad25c9c4553470e0f.php 第 244 行.
+NOTIC: [2] Illegal string offset 'end_time' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\a6ab2c8d7937308ad25c9c4553470e0f.php 第 246 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\a6ab2c8d7937308ad25c9c4553470e0f.php 第 246 行.
+NOTIC: [8] Use of undefined constant aboratory_id - assumed 'aboratory_id' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\a6ab2c8d7937308ad25c9c4553470e0f.php 第 254 行.
+NOTIC: [2] Illegal string offset 'aboratory_id' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\a6ab2c8d7937308ad25c9c4553470e0f.php 第 254 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\a6ab2c8d7937308ad25c9c4553470e0f.php 第 254 行.
+NOTIC: [8] Use of undefined constant aboratory_id - assumed 'aboratory_id' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\a6ab2c8d7937308ad25c9c4553470e0f.php 第 254 行.
+NOTIC: [2] Illegal string offset 'aboratory_id' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\a6ab2c8d7937308ad25c9c4553470e0f.php 第 254 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\a6ab2c8d7937308ad25c9c4553470e0f.php 第 254 行.
+NOTIC: [8] Use of undefined constant status - assumed 'status' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\a6ab2c8d7937308ad25c9c4553470e0f.php 第 263 行.
+NOTIC: [2] Illegal string offset 'status' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\a6ab2c8d7937308ad25c9c4553470e0f.php 第 263 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\a6ab2c8d7937308ad25c9c4553470e0f.php 第 263 行.
+NOTIC: [8] Use of undefined constant status - assumed 'status' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\a6ab2c8d7937308ad25c9c4553470e0f.php 第 264 行.
+NOTIC: [2] Illegal string offset 'status' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\a6ab2c8d7937308ad25c9c4553470e0f.php 第 264 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\a6ab2c8d7937308ad25c9c4553470e0f.php 第 264 行.
+NOTIC: [8] Use of undefined constant status - assumed 'status' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\a6ab2c8d7937308ad25c9c4553470e0f.php 第 265 行.
+NOTIC: [2] Illegal string offset 'status' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\a6ab2c8d7937308ad25c9c4553470e0f.php 第 265 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\a6ab2c8d7937308ad25c9c4553470e0f.php 第 265 行.
+NOTIC: [8] Use of undefined constant search - assumed 'search' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\a6ab2c8d7937308ad25c9c4553470e0f.php 第 286 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2017-12-20T23:14:45+08:00 ] 127.0.0.1 /index.php?m=Member&c=Member&a=checked
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `sm_sysconfig`  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `sm_auth_group_access` [ RunTime:0.0110s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM sm_auth_group_access a INNER JOIN sm_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0090s ]
+SQL: SELECT `condition`,`name` FROM `sm_auth_rule` WHERE `id` IN ('1','6','59','151','178','179','180','208','210','231','232','233','234','235','237','238','239','240','211','241','242','243','244','246','247','248','249','209','225','224','226','227','228','229','230','694','701','702','697','705','698','706','699','707','691','708','692','693','670','671','709','672','673') AND `type` = 1  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `name` = 'Member/Member/checked' AND `status` = 1 ORDER BY `level` desc,`sort` LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `status` = 1 AND `pid` = 0 ORDER BY `sort`  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `sm_auth_group_access` [ RunTime:0.0090s ]
+SQL: SELECT `group_id` FROM `sm_auth_group_access` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `sm_subscribe` [ RunTime:0.0100s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sm_subscribe` AS a LEFT JOIN sm_lab_list AS b ON a.aboratory_id = b.s_id  WHERE a.is_del = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT a.*,b.lab_name FROM `sm_subscribe` AS a LEFT JOIN sm_lab_list AS b ON a.aboratory_id = b.s_id  WHERE a.is_del = 2 ORDER BY a.status ASC,a.addtime DESC LIMIT 0,10   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_classhour_list` [ RunTime:0.0090s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 9 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 3 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 6 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 7 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 7 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 7 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 8 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 8 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 10 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 9 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `sm_lab_list` [ RunTime:0.0100s ]
+SQL: SELECT `s_id`,`lab_name` FROM `sm_lab_list` WHERE `is_del` = 1 AND `status` = 1  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: search D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\14e5aa8f57a07928714a117c3dca8dfa.php 第 236 行.
+NOTIC: [8] Undefined variable: search D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\14e5aa8f57a07928714a117c3dca8dfa.php 第 238 行.
+NOTIC: [8] Use of undefined constant status - assumed 'status' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\14e5aa8f57a07928714a117c3dca8dfa.php 第 245 行.
+NOTIC: [8] Undefined variable: search D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\14e5aa8f57a07928714a117c3dca8dfa.php 第 245 行.
+NOTIC: [8] Use of undefined constant status - assumed 'status' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\14e5aa8f57a07928714a117c3dca8dfa.php 第 246 行.
+NOTIC: [8] Undefined variable: search D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\14e5aa8f57a07928714a117c3dca8dfa.php 第 246 行.
+NOTIC: [8] Use of undefined constant status - assumed 'status' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\14e5aa8f57a07928714a117c3dca8dfa.php 第 247 行.
+NOTIC: [8] Undefined variable: search D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\14e5aa8f57a07928714a117c3dca8dfa.php 第 247 行.
+NOTIC: [8] Use of undefined constant aboratory_id - assumed 'aboratory_id' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\14e5aa8f57a07928714a117c3dca8dfa.php 第 256 行.
+NOTIC: [8] Undefined variable: search D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\14e5aa8f57a07928714a117c3dca8dfa.php 第 256 行.
+NOTIC: [8] Use of undefined constant aboratory_id - assumed 'aboratory_id' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\14e5aa8f57a07928714a117c3dca8dfa.php 第 256 行.
+NOTIC: [8] Undefined variable: search D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\14e5aa8f57a07928714a117c3dca8dfa.php 第 256 行.
+NOTIC: [8] Use of undefined constant search - assumed 'search' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\14e5aa8f57a07928714a117c3dca8dfa.php 第 277 行.
+NOTIC: [8] Undefined variable: search D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\14e5aa8f57a07928714a117c3dca8dfa.php 第 277 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-20T23:14:49+08:00 ] 127.0.0.1 /index.php?m=Member&c=Member&a=subscribeSelect
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `sm_sysconfig`  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `sm_auth_group_access` [ RunTime:0.0090s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM sm_auth_group_access a INNER JOIN sm_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0100s ]
+SQL: SELECT `condition`,`name` FROM `sm_auth_rule` WHERE `id` IN ('1','6','59','151','178','179','180','208','210','231','232','233','234','235','237','238','239','240','211','241','242','243','244','246','247','248','249','209','225','224','226','227','228','229','230','694','701','702','697','705','698','706','699','707','691','708','692','693','670','671','709','672','673') AND `type` = 1  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `name` = 'Member/Member/subscribeSelect' AND `status` = 1 ORDER BY `level` desc,`sort` LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `status` = 1 AND `pid` = 0 ORDER BY `sort`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_auth_group_access` [ RunTime:0.0090s ]
+SQL: SELECT `group_id` FROM `sm_auth_group_access` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `sm_subscribe` [ RunTime:0.0100s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sm_subscribe` AS a LEFT JOIN sm_lab_list AS b ON a.aboratory_id=b.s_id  WHERE ( a.subscribe_time > 1513699200 AND a.subscribe_time <= 1514908799  ) AND a.status = 2 AND a.is_del = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT a.*,b.lab_name FROM `sm_subscribe` AS a LEFT JOIN sm_lab_list AS b ON a.aboratory_id=b.s_id  WHERE ( a.subscribe_time > 1513699200 AND a.subscribe_time <= 1514908799  ) AND a.status = 2 AND a.is_del = 2 ORDER BY a.subscribe_time DESC LIMIT 0,10   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_classhour_list` [ RunTime:0.0120s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 5 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_lab_list` [ RunTime:0.0090s ]
+SQL: SELECT `s_id`,`lab_name` FROM `sm_lab_list` WHERE `is_del` = 1 AND `status` = 1  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant aboratory_id - assumed 'aboratory_id' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\0a4dbc99dc019085590e81d36cb5fe6b.php 第 238 行.
+NOTIC: [2] Illegal string offset 'aboratory_id' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\0a4dbc99dc019085590e81d36cb5fe6b.php 第 238 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\0a4dbc99dc019085590e81d36cb5fe6b.php 第 238 行.
+NOTIC: [8] Use of undefined constant aboratory_id - assumed 'aboratory_id' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\0a4dbc99dc019085590e81d36cb5fe6b.php 第 238 行.
+NOTIC: [2] Illegal string offset 'aboratory_id' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\0a4dbc99dc019085590e81d36cb5fe6b.php 第 238 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\0a4dbc99dc019085590e81d36cb5fe6b.php 第 238 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-20T23:14:50+08:00 ] 127.0.0.1 /index.php?m=Member&c=Member&a=subscribe
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `sm_sysconfig`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_auth_group_access` [ RunTime:0.0090s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM sm_auth_group_access a INNER JOIN sm_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0090s ]
+SQL: SELECT `condition`,`name` FROM `sm_auth_rule` WHERE `id` IN ('1','6','59','151','178','179','180','208','210','231','232','233','234','235','237','238','239','240','211','241','242','243','244','246','247','248','249','209','225','224','226','227','228','229','230','694','701','702','697','705','698','706','699','707','691','708','692','693','670','671','709','672','673') AND `type` = 1  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `name` = 'Member/Member/subscribe' AND `status` = 1 ORDER BY `level` desc,`sort` LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `status` = 1 AND `pid` = 0 ORDER BY `sort`  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `sm_auth_group_access` [ RunTime:0.0110s ]
+SQL: SELECT `group_id` FROM `sm_auth_group_access` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `sm_subscribe` [ RunTime:0.0100s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sm_subscribe`  AS a LEFT JOIN sm_lab_list as b ON a.aboratory_id = b.s_id  INNER JOIN  sm_classhour_list as c on a.class_hour = c.c_id  WHERE a.admin_id = '1' AND a.is_del = 2 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT a.*,b.lab_name,c.classhour_name FROM `sm_subscribe`  AS a LEFT JOIN sm_lab_list as b ON a.aboratory_id = b.s_id  INNER JOIN  sm_classhour_list as c on a.class_hour = c.c_id  WHERE a.admin_id = '1' AND a.is_del = 2 ORDER BY `addtime` DESC,`status` LIMIT 0,15   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_lab_list` [ RunTime:0.0090s ]
+SQL: SELECT `s_id`,`lab_name` FROM `sm_lab_list` WHERE `is_del` = 1 AND `status` = 1  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `sm_semester` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `sm_semester` WHERE `is_del` = 2 ORDER BY `semester_addtime` desc LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `sm_classhour_list` [ RunTime:0.0090s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 9 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 3 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 6 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 7 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 7 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 7 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 8 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 8 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 8 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 5 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 5 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 10 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 9 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 10 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 9 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 3 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 3 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2] Illegal string offset 'start_time' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\a6ab2c8d7937308ad25c9c4553470e0f.php 第 244 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\a6ab2c8d7937308ad25c9c4553470e0f.php 第 244 行.
+NOTIC: [2] Illegal string offset 'end_time' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\a6ab2c8d7937308ad25c9c4553470e0f.php 第 246 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\a6ab2c8d7937308ad25c9c4553470e0f.php 第 246 行.
+NOTIC: [8] Use of undefined constant aboratory_id - assumed 'aboratory_id' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\a6ab2c8d7937308ad25c9c4553470e0f.php 第 254 行.
+NOTIC: [2] Illegal string offset 'aboratory_id' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\a6ab2c8d7937308ad25c9c4553470e0f.php 第 254 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\a6ab2c8d7937308ad25c9c4553470e0f.php 第 254 行.
+NOTIC: [8] Use of undefined constant aboratory_id - assumed 'aboratory_id' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\a6ab2c8d7937308ad25c9c4553470e0f.php 第 254 行.
+NOTIC: [2] Illegal string offset 'aboratory_id' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\a6ab2c8d7937308ad25c9c4553470e0f.php 第 254 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\a6ab2c8d7937308ad25c9c4553470e0f.php 第 254 行.
+NOTIC: [8] Use of undefined constant status - assumed 'status' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\a6ab2c8d7937308ad25c9c4553470e0f.php 第 263 行.
+NOTIC: [2] Illegal string offset 'status' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\a6ab2c8d7937308ad25c9c4553470e0f.php 第 263 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\a6ab2c8d7937308ad25c9c4553470e0f.php 第 263 行.
+NOTIC: [8] Use of undefined constant status - assumed 'status' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\a6ab2c8d7937308ad25c9c4553470e0f.php 第 264 行.
+NOTIC: [2] Illegal string offset 'status' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\a6ab2c8d7937308ad25c9c4553470e0f.php 第 264 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\a6ab2c8d7937308ad25c9c4553470e0f.php 第 264 行.
+NOTIC: [8] Use of undefined constant status - assumed 'status' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\a6ab2c8d7937308ad25c9c4553470e0f.php 第 265 行.
+NOTIC: [2] Illegal string offset 'status' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\a6ab2c8d7937308ad25c9c4553470e0f.php 第 265 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\a6ab2c8d7937308ad25c9c4553470e0f.php 第 265 行.
+NOTIC: [8] Use of undefined constant search - assumed 'search' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\a6ab2c8d7937308ad25c9c4553470e0f.php 第 286 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-20T23:15:22+08:00 ] 127.0.0.1 /index.php?m=Member&c=Member&a=subscribeSelect
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `sm_sysconfig`  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `sm_auth_group_access` [ RunTime:0.0080s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM sm_auth_group_access a INNER JOIN sm_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0090s ]
+SQL: SELECT `condition`,`name` FROM `sm_auth_rule` WHERE `id` IN ('1','6','59','151','178','179','180','208','210','231','232','233','234','235','237','238','239','240','211','241','242','243','244','246','247','248','249','209','225','224','226','227','228','229','230','694','701','702','697','705','698','706','699','707','691','708','692','693','670','671','709','672','673') AND `type` = 1  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `name` = 'Member/Member/subscribeSelect' AND `status` = 1 ORDER BY `level` desc,`sort` LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `status` = 1 AND `pid` = 0 ORDER BY `sort`  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `sm_auth_group_access` [ RunTime:0.0090s ]
+SQL: SELECT `group_id` FROM `sm_auth_group_access` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `sm_subscribe` [ RunTime:0.0100s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sm_subscribe` AS a LEFT JOIN sm_lab_list AS b ON a.aboratory_id=b.s_id  WHERE ( a.subscribe_time > 1513699200 AND a.subscribe_time <= 1514908799  ) AND a.status = 2 AND a.is_del = 2 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT a.*,b.lab_name FROM `sm_subscribe` AS a LEFT JOIN sm_lab_list AS b ON a.aboratory_id=b.s_id  WHERE ( a.subscribe_time > 1513699200 AND a.subscribe_time <= 1514908799  ) AND a.status = 2 AND a.is_del = 2 ORDER BY a.subscribe_time DESC LIMIT 0,10   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_classhour_list` [ RunTime:0.0130s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 5 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `sm_lab_list` [ RunTime:0.0120s ]
+SQL: SELECT `s_id`,`lab_name` FROM `sm_lab_list` WHERE `is_del` = 1 AND `status` = 1  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant aboratory_id - assumed 'aboratory_id' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\0a4dbc99dc019085590e81d36cb5fe6b.php 第 238 行.
+NOTIC: [2] Illegal string offset 'aboratory_id' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\0a4dbc99dc019085590e81d36cb5fe6b.php 第 238 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\0a4dbc99dc019085590e81d36cb5fe6b.php 第 238 行.
+NOTIC: [8] Use of undefined constant aboratory_id - assumed 'aboratory_id' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\0a4dbc99dc019085590e81d36cb5fe6b.php 第 238 行.
+NOTIC: [2] Illegal string offset 'aboratory_id' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\0a4dbc99dc019085590e81d36cb5fe6b.php 第 238 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\0a4dbc99dc019085590e81d36cb5fe6b.php 第 238 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-20T23:15:24+08:00 ] 127.0.0.1 /index.php?m=Member&c=Member&a=checked
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `sm_sysconfig`  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `sm_auth_group_access` [ RunTime:0.0080s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM sm_auth_group_access a INNER JOIN sm_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0090s ]
+SQL: SELECT `condition`,`name` FROM `sm_auth_rule` WHERE `id` IN ('1','6','59','151','178','179','180','208','210','231','232','233','234','235','237','238','239','240','211','241','242','243','244','246','247','248','249','209','225','224','226','227','228','229','230','694','701','702','697','705','698','706','699','707','691','708','692','693','670','671','709','672','673') AND `type` = 1  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `name` = 'Member/Member/checked' AND `status` = 1 ORDER BY `level` desc,`sort` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `status` = 1 AND `pid` = 0 ORDER BY `sort`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_auth_group_access` [ RunTime:0.0090s ]
+SQL: SELECT `group_id` FROM `sm_auth_group_access` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `sm_subscribe` [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sm_subscribe` AS a LEFT JOIN sm_lab_list AS b ON a.aboratory_id = b.s_id  WHERE a.is_del = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT a.*,b.lab_name FROM `sm_subscribe` AS a LEFT JOIN sm_lab_list AS b ON a.aboratory_id = b.s_id  WHERE a.is_del = 2 ORDER BY a.status ASC,a.addtime DESC LIMIT 0,10   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_classhour_list` [ RunTime:0.0100s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 9 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 3 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 6 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 7 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 7 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 7 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 8 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 8 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 10 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 9 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `sm_lab_list` [ RunTime:0.0090s ]
+SQL: SELECT `s_id`,`lab_name` FROM `sm_lab_list` WHERE `is_del` = 1 AND `status` = 1  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: search D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\14e5aa8f57a07928714a117c3dca8dfa.php 第 236 行.
+NOTIC: [8] Undefined variable: search D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\14e5aa8f57a07928714a117c3dca8dfa.php 第 238 行.
+NOTIC: [8] Use of undefined constant status - assumed 'status' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\14e5aa8f57a07928714a117c3dca8dfa.php 第 245 行.
+NOTIC: [8] Undefined variable: search D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\14e5aa8f57a07928714a117c3dca8dfa.php 第 245 行.
+NOTIC: [8] Use of undefined constant status - assumed 'status' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\14e5aa8f57a07928714a117c3dca8dfa.php 第 246 行.
+NOTIC: [8] Undefined variable: search D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\14e5aa8f57a07928714a117c3dca8dfa.php 第 246 行.
+NOTIC: [8] Use of undefined constant status - assumed 'status' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\14e5aa8f57a07928714a117c3dca8dfa.php 第 247 行.
+NOTIC: [8] Undefined variable: search D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\14e5aa8f57a07928714a117c3dca8dfa.php 第 247 行.
+NOTIC: [8] Use of undefined constant aboratory_id - assumed 'aboratory_id' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\14e5aa8f57a07928714a117c3dca8dfa.php 第 256 行.
+NOTIC: [8] Undefined variable: search D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\14e5aa8f57a07928714a117c3dca8dfa.php 第 256 行.
+NOTIC: [8] Use of undefined constant aboratory_id - assumed 'aboratory_id' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\14e5aa8f57a07928714a117c3dca8dfa.php 第 256 行.
+NOTIC: [8] Undefined variable: search D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\14e5aa8f57a07928714a117c3dca8dfa.php 第 256 行.
+NOTIC: [8] Use of undefined constant search - assumed 'search' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\14e5aa8f57a07928714a117c3dca8dfa.php 第 277 行.
+NOTIC: [8] Undefined variable: search D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\14e5aa8f57a07928714a117c3dca8dfa.php 第 277 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-12-20T23:15:57+08:00 ] 127.0.0.1 /index.php?m=Member&c=Member&a=subscribe
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `sm_sysconfig`  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `sm_auth_group_access` [ RunTime:0.0080s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM sm_auth_group_access a INNER JOIN sm_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0090s ]
+SQL: SELECT `condition`,`name` FROM `sm_auth_rule` WHERE `id` IN ('1','6','59','151','178','179','180','208','210','231','232','233','234','235','237','238','239','240','211','241','242','243','244','246','247','248','249','209','225','224','226','227','228','229','230','694','701','702','697','705','698','706','699','707','691','708','692','693','670','671','709','672','673') AND `type` = 1  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `name` = 'Member/Member/subscribe' AND `status` = 1 ORDER BY `level` desc,`sort` LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `status` = 1 AND `pid` = 0 ORDER BY `sort`  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `sm_auth_group_access` [ RunTime:0.0090s ]
+SQL: SELECT `group_id` FROM `sm_auth_group_access` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_subscribe` [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sm_subscribe`  AS a LEFT JOIN sm_lab_list as b ON a.aboratory_id = b.s_id  INNER JOIN  sm_classhour_list as c on a.class_hour = c.c_id  WHERE a.admin_id = '1' AND a.is_del = 2 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT a.*,b.lab_name,c.classhour_name FROM `sm_subscribe`  AS a LEFT JOIN sm_lab_list as b ON a.aboratory_id = b.s_id  INNER JOIN  sm_classhour_list as c on a.class_hour = c.c_id  WHERE a.admin_id = '1' AND a.is_del = 2 ORDER BY `addtime` DESC,`status` LIMIT 0,15   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_lab_list` [ RunTime:0.0090s ]
+SQL: SELECT `s_id`,`lab_name` FROM `sm_lab_list` WHERE `is_del` = 1 AND `status` = 1  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `sm_semester` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `sm_semester` WHERE `is_del` = 2 ORDER BY `semester_addtime` desc LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `sm_classhour_list` [ RunTime:0.0090s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 9 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 3 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 6 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 7 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 7 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 7 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 8 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 8 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 8 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 5 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 5 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 10 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 9 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 10 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 9 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 3 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 3 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `classhour_name` FROM `sm_classhour_list` WHERE `c_id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2] Illegal string offset 'start_time' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\a6ab2c8d7937308ad25c9c4553470e0f.php 第 244 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\a6ab2c8d7937308ad25c9c4553470e0f.php 第 244 行.
+NOTIC: [2] Illegal string offset 'end_time' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\a6ab2c8d7937308ad25c9c4553470e0f.php 第 246 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\a6ab2c8d7937308ad25c9c4553470e0f.php 第 246 行.
+NOTIC: [8] Use of undefined constant aboratory_id - assumed 'aboratory_id' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\a6ab2c8d7937308ad25c9c4553470e0f.php 第 254 行.
+NOTIC: [2] Illegal string offset 'aboratory_id' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\a6ab2c8d7937308ad25c9c4553470e0f.php 第 254 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\a6ab2c8d7937308ad25c9c4553470e0f.php 第 254 行.
+NOTIC: [8] Use of undefined constant aboratory_id - assumed 'aboratory_id' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\a6ab2c8d7937308ad25c9c4553470e0f.php 第 254 行.
+NOTIC: [2] Illegal string offset 'aboratory_id' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\a6ab2c8d7937308ad25c9c4553470e0f.php 第 254 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\a6ab2c8d7937308ad25c9c4553470e0f.php 第 254 行.
+NOTIC: [8] Use of undefined constant status - assumed 'status' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\a6ab2c8d7937308ad25c9c4553470e0f.php 第 263 行.
+NOTIC: [2] Illegal string offset 'status' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\a6ab2c8d7937308ad25c9c4553470e0f.php 第 263 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\a6ab2c8d7937308ad25c9c4553470e0f.php 第 263 行.
+NOTIC: [8] Use of undefined constant status - assumed 'status' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\a6ab2c8d7937308ad25c9c4553470e0f.php 第 264 行.
+NOTIC: [2] Illegal string offset 'status' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\a6ab2c8d7937308ad25c9c4553470e0f.php 第 264 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\a6ab2c8d7937308ad25c9c4553470e0f.php 第 264 行.
+NOTIC: [8] Use of undefined constant status - assumed 'status' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\a6ab2c8d7937308ad25c9c4553470e0f.php 第 265 行.
+NOTIC: [2] Illegal string offset 'status' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\a6ab2c8d7937308ad25c9c4553470e0f.php 第 265 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\a6ab2c8d7937308ad25c9c4553470e0f.php 第 265 行.
+NOTIC: [8] Use of undefined constant search - assumed 'search' D:\phpStudy\WWW\shiyanshi\data\runtime\Cache\Member\a6ab2c8d7937308ad25c9c4553470e0f.php 第 286 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-12-20T23:16:00+08:00 ] 127.0.0.1 /index.php?m=Member&c=Member&a=subscribePre
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `sm_sysconfig`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_auth_group_access` [ RunTime:0.0100s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM sm_auth_group_access a INNER JOIN sm_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0090s ]
+SQL: SELECT `condition`,`name` FROM `sm_auth_rule` WHERE `id` IN ('1','6','59','151','178','179','180','208','210','231','232','233','234','235','237','238','239','240','211','241','242','243','244','246','247','248','249','209','225','224','226','227','228','229','230','694','701','702','697','705','698','706','699','707','691','708','692','693','670','671','709','672','673') AND `type` = 1  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `name` = 'Member/Member/subscribePre' AND `status` = 1 ORDER BY `level` desc,`sort` LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `status` = 0 AND `name` = 'Member/Member/subscribePre' ORDER BY `level` desc,`sort` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `id` = 691 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `name` = 'Member/Member/subscribe' AND `status` = 1 ORDER BY `level` desc,`sort` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `status` = 1 AND `pid` = 0 ORDER BY `sort`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_admin` [ RunTime:0.0090s ]
+SQL: SELECT `admin_realname` FROM `sm_admin` WHERE `admin_id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `admin_tel` FROM `sm_admin` WHERE `admin_id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `sm_lab_list` [ RunTime:0.0100s ]
+SQL: SELECT `s_id`,`lab_name` FROM `sm_lab_list` WHERE `status` = 1 AND `is_del` = 1  [ RunTime:0.0000s ]
+SQL: SELECT `admin_id`,`admin_realname` FROM `sm_admin` WHERE `admin_open` = 1 AND `is_del` = 1  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `sm_classhour_list` [ RunTime:0.0080s ]
+SQL: SELECT `c_id`,`classhour_name` FROM `sm_classhour_list` WHERE `is_del` = 1 ORDER BY `sort` ASC  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_department_list` [ RunTime:0.0100s ]
+SQL: SELECT `department_id`,`department_name` FROM `sm_department_list` WHERE `is_del` = 1 ORDER BY `sort` DESC  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `sm_semester` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `sm_semester` WHERE `is_del` = 2 ORDER BY `semester_addtime` desc LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] Undefined variable: cur_ww D:\phpStudy\WWW\shiyanshi\app\Member\Controller\MemberController.class.php 第 374 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+

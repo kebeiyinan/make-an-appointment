@@ -1,0 +1,162 @@
+<?php
+// +----------------------------------------------------------------------
+// | 字典管理模块
+// +----------------------------------------------------------------------
+// | 字典管理
+// +----------------------------------------------------------------------
+// | 石保帅  2017.11.7
+// +----------------------------------------------------------------------
+namespace Dictionary\Controller;
+use Common\Controller\AuthController;
+use Org\Util\Stringnew;
+class IndexController extends AuthController {
+	//顶级分类列表
+	public function index()
+	{
+		$site_db = M('site_dictionary');
+		$count = $site_db->where(array('parent_id'=>0))->count();
+		$Page= new \Think\Page($count,10);// 实例化分页类 传入总记录数和每页显示的记录数
+		$show= $Page->show();
+		$list = $site_db->where(array('parent_id'=>0))->select();
+		$this->assign('list',$list);
+		$this->assign('page',$show);
+		$this->display();
+	}
+	/*
+	 * 实验室管理列表
+	 */
+	public function laboratoryEdit()
+	{
+		$this->display();
+	}
+	/*
+	 * 实验室添加
+	 */
+	public function laboratoryAdd()
+	{
+		$this->display();
+	}
+	/*
+	 *编辑实验室
+	 */
+	public function laboratorygl()
+	{
+		$this->display();
+	}
+	/*
+	 * 专业管理列表
+	 */
+	public function majorEdit()
+	{
+		$this->display();
+	}
+	/*
+	 * 专业添加
+	 */
+	public function majorAdd()
+	{
+		$this->display();
+	}
+ 
+	/*
+	 * 系部管理列表
+	 */
+	public function branchEdit()
+	{
+		$this->display();
+	}
+	/*
+	 * 系部添加
+	 */
+	public function branchAdd()
+	{
+		$this->display();
+	}
+	/*
+	 * 课时管理列表
+	 */
+	public function periodEdit()
+	{
+		$this->display();
+	}
+	/*
+	 * 课时添加
+	 */
+	public function periodAdd()
+	{
+		$this->display();
+	}
+	/*
+	 * 学期管理列表
+	 */
+	public function semesterEdit()
+	{
+		$this->display();
+	}
+	/*
+	 * 学期添加
+	 */
+	public function semesterAdd()
+	{
+		$this->display();
+	}
+	//删除分类
+	public function catDel()
+	{
+		$id = I('id');
+		$re = M('site_dictionary')->where('d_id ='.$id)->delete();
+		if($re)
+		{
+			$this->success('删除成功',U('index',array('p'=>I('p'))),1);
+		}
+		else
+		{
+			$this->error('操作失败',U('index',array('p'=>I('p'))),0);
+		}
+	}
+
+	//添加分类
+	public function catAdd()
+	{
+		if(IS_AJAX)
+		{
+			$p_id = I('p_id',0);
+			$name = I('names');
+			$indata = array(
+				'parent_id' =>	$p_id,
+				'name'		=> 	$name,
+			);
+			M('site_dictionary')->add($indata);
+			$this->success('添加成功',U('index'),1);
+		}
+		else
+		{
+			$this->display();
+		}
+	}
+	//修改排序页面
+	public function catEdit()
+	{
+		if(IS_AJAX)
+		{
+			$p_id = I('p_id',0);
+			$d_id = I('d_id');
+			$name = I('names');
+			$indata = array(
+				'parent_id' =>	$p_id,
+				'name'		=> 	$name,
+			);
+			M('site_dictionary')->where('d_id ='.$d_id)->save($indata);
+			$this->success('修改成功',U('index',array('p'=>I('p',1))),1);
+		}
+		else
+		{
+			$id = I('id');
+			$data = M('site_dictionary')->where('d_id ='.$id)->find();
+			$this->assign('p',I('p'));
+			$this->assign('data',$data);
+			$this->display();
+		}	
+	}
+
+}

@@ -1,0 +1,152 @@
+<extend name="Admin@Public/base" />
+<block name="main-content">
+	<div class="page-content">
+		<div class="row maintop">
+			<div class="col-xs-4 col-sm-2">
+				<a href="{:U('admin_add')}">
+					<button class="btn btn-sm btn-danger">
+						<i class="ace-icon fa fa-bolt bigger-110"></i>
+						添加管理员
+					</button>
+				</a>
+			</div>
+			<div class="col-xs-10 col-sm-5">
+				<form name="admin_list_sea" class="form-search" method="post" action="{:U('admin_list')}">
+					<div class="input-group">
+						<span class="input-group-addon">
+							<i class="ace-icon fa fa-check"></i>
+						</span>
+						<input type="text" name="val" id="val" class="form-control" value="{$testval}" placeholder="输入需查询的教师姓名或手机号" required/>
+						<span class="input-group-btn">
+							<button type="submit" class="btn btn-purple btn-sm">
+								<span class="ace-icon fa fa-search icon-on-right bigger-110"></span>
+								搜索
+							</button>
+						</span>
+					</div>
+				</form>
+			</div>
+			<div class="col-xs-4 col-sm-5">
+				<div class="input-group-btn">
+					<a href="{:U('admin_list')}">
+						<button type="button" class="btn btn-sm  btn-purple">
+							<span class="ace-icon fa fa-globe icon-on-right bigger-110"></span>
+							显示全部
+						</button>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12">
+				<div>
+					<form class="ajaxForm"  method="post" action="{:U('admin_moneydel')}" id="listForm">
+						<table class="table table-striped table-bordered table-hover" id="dynamic-table">
+							<thead>
+								<tr>
+									<th class="hidden-xs center" style="width: 100px;">
+										<label class="pos-rel">
+											<input type="checkbox" class="ace"  id='chkAll' onclick='CheckAll(this.form)' value="全选"/>
+											<span class="lbl"></span>
+										</label>											
+									</th>
+									<th class="hidden-sm hidden-xs">教师工号</th>
+									<th class="hidden-sm hidden-xs">姓名</th>
+									<th class="hidden-sm hidden-xs">角色</th>
+									<th class="hidden-sm hidden-xs">电话号码</th>
+									<th class="hidden-sm hidden-xs">部门</th>
+									<th class="hidden-sm hidden-xs">禁用</th>
+									<th style="border-right:#CCC solid 1px;">操作</th>
+								</tr>
+							</thead>
+							<tbody>
+								<foreach name="admin_list"  item="vo">
+									<tr>
+										<td class="hidden-xs" align="center">
+											<label class="pos-rel">
+												<input name='admin_id[]' id="navid" class="ace"  type='checkbox' value='{$vo.admin_id}'>
+												<span class="lbl"></span>
+											</label>
+										</td>
+										<td class="hidden-sm hidden-xs">{$vo.admin_username}</td>
+										<td class="hidden-sm hidden-xs">{$vo.admin_realname}</td>
+										<td class="hidden-sm hidden-xs">{$vo.group}</td>
+										<td class="hidden-sm hidden-xs">{$vo.admin_tel}</td>
+										<td class="hidden-sm hidden-xs">{$vo.department_name}</td>
+										<td>
+											<if condition="$vo['admin_open'] eq 1">
+												<a class="red open-btn" href="{:U('admin_state')}" data-id="{$vo.admin_id}" title="已开启">
+													<div id="zt{$vo.admin_id}"><button class="btn btn-minier btn-yellow">开启</button></div>
+												</a>
+												<else/>
+												<a class="red open-btn" href="{:U('admin_state')}" data-id="{$vo.admin_id}" title="已禁用">
+													<div id="zt{$vo.admin_id}"><button class="btn btn-minier btn-danger">禁用</button></div>
+												</a>
+											</if>
+										</td>
+										<td>
+											<div class="hidden-sm hidden-xs action-buttons">
+												<a class="green" href="{:U('admin_edit',array('admin_id'=>$vo['admin_id']))}" title="修改"/>
+													<i class="ace-icon fa fa-pencil bigger-130"></i>
+												</a>
+												<!-- <if condition="$vo['admin_id'] neq 1"> -->
+													<a class="red confirm-rst-url-btn" data-info="你确定要删除吗？" href="{:U('admin_del',array('admin_id'=>$vo['admin_id']))}" title="删除">
+														<i class="ace-icon fa fa-trash-o bigger-130"></i>
+													</a>
+												<!-- </if> -->
+											</div>
+<!-- 											<div class="hidden-md hidden-lg">
+												<div class="inline position-relative">
+													<button class="btn btn-minier btn-primary dropdown-toggle" data-toggle="dropdown" data-position="auto">
+														<i class="ace-icon fa fa-cog icon-only bigger-110"></i>
+													</button>
+													<ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
+														<li>
+															<a href="{:U('admin_edit',array('admin_id'=>$vo['admin_id']))}" class="tooltip-success" data-rel="tooltip" title="" data-original-title="修改">
+																<span class="green">
+																	<i class="ace-icon fa fa-pencil-square-o bigger-120"></i>
+																</span>
+															</a>
+														</li>
+														<if condition="$vo['admin_id'] neq 1">
+															<li>
+																<a href="{:U('admin_del',array('admin_id'=>$vo['admin_id']))}"  data-info="你确定要删除吗？" class="tooltip-error confirm-rst-url-btn" data-rel="tooltip" title="" data-original-title="删除">
+																	<span class="red">
+																		<i class="ace-icon fa fa-trash-o bigger-120"></i>
+																	</span>
+																</a>
+															</li>
+														</if>
+													</ul>
+												</div>
+											</div> -->
+										</td>
+									</tr>
+								</foreach>
+								<tr>
+									 <td align="left"><button type="button" onClick="batchdrop()"  class="btn btn-white btn-yellow btn-sm">删除操作</button> </td>
+									<td height="50" colspan="10" align="left">{$page}</td>
+								</tr>
+							</tbody>
+						</table>
+					</form>
+				</div>
+			</div>
+		</div>
+
+	</div><!-- /.page-content -->
+</block>
+<block name="scripts">
+    <script type="text/javascript">
+    function batchdrop()
+    {
+        layer.confirm('您确定要删除？', {
+            btn: ['确定','取消'] //按钮
+        }, function(){
+            $('#listForm').submit();
+        }, function(){
+          
+        });
+    }
+</script>
+</block>

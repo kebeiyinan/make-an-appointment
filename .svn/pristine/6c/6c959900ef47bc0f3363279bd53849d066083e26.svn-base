@@ -1,0 +1,15 @@
+<div id="sidebar2" class="sidebar h-sidebar navbar-collapse collapse sidebar-fixed menu-min" data-sidebar="true" data-sidebar-scroll="true" data-sidebar-hover="true">
+	<div class="nav-wrap-up pos-rel">
+		<div class="nav-wrap">
+			<ul class="nav nav-list">
+				<li>
+					<a href="{:U('Admin/Index/index')}">
+						<o class="font12">欢迎进入{$info.cfg_webname}管理系统</o>
+					</a>
+					<b class="arrow"></b>
+				</li>
+			
+			</ul>
+		</div>
+	</div><!-- /.nav-list -->
+</div>
